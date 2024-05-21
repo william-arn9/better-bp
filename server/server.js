@@ -153,6 +153,11 @@ io.on('connection', (socket) => {
     io.emit('settingsUpdate', { visibility, timer: timerDuration, lives: startingLives, maxLives, difficulty });
   });
 
+  socket.on('authFetch', (data) => {
+    const user = lobbyPlayers.find((p) => p.name === data.username);
+    io.emit('auth', user);
+  });
+
   // Handle player joining lobby
   socket.on('joinLobby', (data) => {
     if(!lobbyPlayers.find((p) => p.name === data.username)) {
@@ -179,7 +184,7 @@ io.on('connection', (socket) => {
   socket.on('sendMessage', (data) => {
     messageLog.push(data);
     io.emit('lobbyUpdate', { lobbyPlayers, messageLog });
-  })
+  });
 
   // Handle client disconnect
   socket.on('disconnect', () => {

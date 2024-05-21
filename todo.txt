@@ -1,5 +1,4 @@
 - Add suicide behavior
-- Allow lobby leader to set game settings
 - Add sounds
 - Determine design pattern for multiple concurrent games
 - Allow users to create rooms

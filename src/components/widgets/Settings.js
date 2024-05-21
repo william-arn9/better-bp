@@ -11,17 +11,32 @@ const INIT_SETTINGS = {
 
 const Settings = () => {
   const [settings, setSettings] = useState(INIT_SETTINGS);
+  const [myUser, setMyUser] = useState({});
 
   useEffect(() => {
-    socket.on('settingsUpdate', (data) => {
+    const username = sessionStorage.getItem('username');
+
+    const handleSettingsUpdate = (data) => {
       setSettings(data);
-    });
+    };
+
+    const handleAuth = (data) => {
+      if (data.name === username) {
+        setMyUser(data);
+      }
+    };
+
+    socket.on('settingsUpdate', handleSettingsUpdate);
+    socket.on('auth', handleAuth);
+
+    socket.emit('authFetch', { username });
     socket.emit('getSettings');
     
     return () => {
-      socket.off('receiveMessage');
+      socket.off('settingsUpdate', handleSettingsUpdate);
+      socket.off('auth', handleAuth);
     };
-  });
+  }, []);
 
   const handleChange = async (e) => {
     const { name, value } = e.target;
@@ -52,6 +67,7 @@ const Settings = () => {
               checked={settings.visibility === 'public'}
               onChange={handleChange}
               className="mr-2 hidden"
+              disabled={myUser?.role !== 'leader'}
             >
             </input>
             Public
@@ -66,6 +82,7 @@ const Settings = () => {
               checked={settings.visibility === 'private'}
               onChange={handleChange}
               className="mr-2 hidden"
+              disabled={myUser?.role !== 'leader'}
             />
             Private
           </label>
@@ -85,6 +102,7 @@ const Settings = () => {
           style={{
             accentColor: '#aaaaac', // Change the color of the slider thumb and track
           }}
+          disabled={myUser?.role !== 'leader'}
         />
       </label>
       <label className="mb-8">
@@ -101,6 +119,7 @@ const Settings = () => {
           style={{
             accentColor: '#aaaaac', // Change the color of the slider thumb and track
           }}
+          disabled={myUser?.role !== 'leader'}
         />
       </label>
       <label className="mb-8">
@@ -117,6 +136,7 @@ const Settings = () => {
           style={{
             accentColor: '#aaaaac', // Change the color of the slider thumb and track
           }}
+          disabled={myUser?.role !== 'leader'}
         />
       </label>
       <label className="mb-2">
@@ -126,6 +146,7 @@ const Settings = () => {
           value={settings?.difficulty}
           onChange={handleChange}
           className="w-full rounded-md text-lg p-2 border rounded"
+          disabled={myUser?.role !== 'leader'}
         >
           <option value={500}>Easy (Minimum 500 words per prompt)</option>
           <option value={300}>Medium (Minimum 300 words per prompt)</option>
