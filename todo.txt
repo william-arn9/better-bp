@@ -1,4 +1,3 @@
-- Add suicide behavior
 - Add sounds
 - Determine design pattern for multiple concurrent games
 - Allow users to create rooms

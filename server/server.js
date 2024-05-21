@@ -127,7 +127,24 @@ io.on('connection', (socket) => {
   // Handle word submission
   socket.on('submitWord', (data) => {
     word = data.word;
-    if(verifyRealWord(word) && word.includes(prompt)) {
+    if(word === '/BOOM') {
+      timer = timerDuration;
+      gamePlayers[turn].lives--;
+      if(gamePlayers[turn].lives === 0) {
+        gamePlayers[turn].alive = false;
+        if(gamePlayers.filter((player) => player.alive).length < 2) {
+          const winner = gamePlayers.filter((player) => player.alive)[0].name;
+          gamePlayers = [];
+          io.emit('endGame');
+          io.emit('gameUpdate', { lobbyPlayers, gamePlayers: [], turn: 0, prompt, timer, winner });
+          clearInterval(interval);
+          return;
+        }
+      }
+      turn = incrementTurn(gamePlayers, turn);
+      prompt = getRandomPrompt();
+    }
+    else if(verifyRealWord(word) && word.includes(prompt)) {
       turn = incrementTurn(gamePlayers, turn);
       prompt = getRandomPrompt();
       timer = timerDuration;
