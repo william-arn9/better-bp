@@ -1,25 +1,29 @@
 // src/components/Game.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FaHeart } from 'react-icons/fa';
 import socket from '../socket';
 import Chat from './widgets/Chat';
 import Settings from './widgets/Settings';
 
+
+const lifeAudio = new Audio('/assets/lost-life.mp3');
+const turnAudio = new Audio('/assets/turn.mp3');
+const startAudio = new Audio('/assets/game-started.mp3');
+
 const Game = () => {
   const [myUser, setMyUser] = useState('');
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [lobbyPlayers, setLobbyPlayers] = useState([]);
   const [gamePlayers, setGamePlayers] = useState([]);
   const [turn, setTurn] = useState([]);
   const [prompt, setPrompt] = useState('');
-  const [word, setWord] = useState('');
   const [timer, setTimer] = useState(60);
   const [startTimer, setStartTimer] = useState(15);
   const [inputValue, setInputValue] = useState('');
   const [gameStarted, setGameStarted] = useState(false);
   const [winner, setWinner] = useState('');
 
-  const LIVES = 3;
+  const prevGamePlayersRef = useRef([]); // Store previous gamePlayers state
+  const prevTurnRef = useRef(0);
 
   useEffect(() => {
     const username = sessionStorage.getItem('username');
@@ -28,11 +32,9 @@ const Game = () => {
     console.log('Logged in');
     // Listen for game updates
     socket.on('gameUpdate', (data) => {
-      setLobbyPlayers(data.lobbyPlayers);
       setGamePlayers(data.gamePlayers);
       setTurn(data.turn);
       setPrompt(data.prompt);
-      setWord(data.word);
       setTimer(data.timer);
       setWinner(data.winner);
     });
@@ -58,14 +60,54 @@ const Game = () => {
     return () => {
       window.removeEventListener('beforeunload', handleBeforeUnload);
       socket.off('gameUpdate');
+      socket.off('startTimerUpdate');
+      socket.off('timerUpdate');
+      socket.off('startGame');
+      socket.off('endGame');
     };
   }, []);
 
+  useEffect(() => {
+    if(gamePlayers.length > 0 && gameStarted) {
+      startAudio.play().catch(error => {
+        console.error('Error playing audio:', error);
+      });
+    }
+    else if(!gameStarted && winner) {
+      lifeAudio.play().catch(error => {
+        console.error('Error playing audio:', error);
+      });
+    }
+  }, [gameStarted]);
+
+  useEffect(() => {
+    let playedLostLife = false;
+    const prevGamePlayers = prevGamePlayersRef.current;
+    const prevTurn = prevTurnRef.current;
+    gamePlayers.forEach((player, index) => {
+      const prevPlayer = prevGamePlayers[index];
+      if (prevPlayer && player.lives < prevPlayer.lives) {
+        // Play sound effect when a player loses a life
+        lifeAudio.play().catch(error => {
+          console.error('Error playing audio:', error);
+        });
+        playedLostLife = true;
+      }
+    });
+    if(!playedLostLife && prevTurn !== turn && gameStarted) {
+      turnAudio.play().catch(error => {
+        console.error('Error playing audio:', error);
+      });
+    } 
+    // Update previous gamePlayers state
+    prevTurnRef.current = turn;
+    prevGamePlayersRef.cuhrrent = gamePlayers;
+  }, [gamePlayers, turn]);
+
   const handleJoinGame = () => {
-    console.log('jonegame running')
     const username = sessionStorage.getItem('username');
     if (username && !gamePlayers.find((player) => player.name === username)) {
-      const player = { name: username, lives: LIVES };
+      const player = { name: username };
       setGamePlayers((prevPlayers) => [...prevPlayers, player]);
       
       // Emit event to the server to inform other players
