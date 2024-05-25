@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import socket from '../../socket';
 
 const INIT_SETTINGS = {
@@ -10,6 +11,7 @@ const INIT_SETTINGS = {
 };
 
 const Settings = () => {
+  const { gameCode } = useParams();
   const [settings, setSettings] = useState(INIT_SETTINGS);
   const [myUser, setMyUser] = useState({});
 
@@ -29,8 +31,8 @@ const Settings = () => {
     socket.on('settingsUpdate', handleSettingsUpdate);
     socket.on('auth', handleAuth);
 
-    socket.emit('authFetch', { username });
-    socket.emit('getSettings');
+    socket.emit('authFetch', { gameCode, data: { username } });
+    socket.emit('getSettings', { gameCode });
     
     return () => {
       socket.off('settingsUpdate', handleSettingsUpdate);
@@ -44,7 +46,7 @@ const Settings = () => {
       ...settings,
       [name]: value,
     };
-    socket.emit('updateSettings', val);
+    socket.emit('updateSettings', { gameCode, data: val });
   };
 
   // const handleSubmit = () => {

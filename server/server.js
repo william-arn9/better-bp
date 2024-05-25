@@ -4,7 +4,7 @@ const http = require('http');
 const socketIo = require('socket.io');
 const cors = require('cors');  // Import the cors package
 const { v4: uuidv4 } = require('uuid');
-const { getRandomPrompt } = require('./services/generators');
+const { getRandomPrompt, generateGameCode } = require('./services/generators');
 const { verifyRealWord } = require('./services/words.service');
 const { incrementTurn } = require('./services/turn.service');
 
@@ -27,68 +27,69 @@ app.use(cors({
   credentials: true
 }));
 
-// Auth Variables
-let roles = {};
+let games = [];
 
-// Lobby Variables
-let lobbyPlayers = [];
-let messageLog = [];
-
-// Settings Variables
-let visibility = 'public';
-let timerDuration = 5;
-let startingLives = 2;
-let maxLives = 3;
-let difficulty = 500;
-
-// Start Timer Variables
-let startTimer = 15;
-
-// Game Variables
-let gamePlayers = [];
-let turn = 0;
-let prompt = '';
-let word = '';
-let timer = timerDuration;
-let interval;
-
-const startTurnTimer = () => {
-  clearInterval(interval);
-  timer = timerDuration;
-  interval = setInterval(() => {
-    timer -= 1;
-    io.emit('timerUpdate', { timer, turn });
-    if (timer === 0) {
-      timer = timerDuration;
-      gamePlayers[turn].lives--;
-      if(gamePlayers[turn].lives === 0) {
-        gamePlayers[turn].alive = false;
-        if(gamePlayers.filter((player) => player.alive).length < 2) {
-          const winner = gamePlayers.filter((player) => player.alive)[0].name;
-          gamePlayers = [];
-          io.emit('endGame');
-          io.emit('gameUpdate', { lobbyPlayers, gamePlayers: [], turn: 0, prompt, timer, winner });
-          clearInterval(interval);
+const startTurnTimer = (gameCode) => {
+  const game = games[gameCode].game;
+  const settings = games[gameCode].settings;
+  const lobby = games[gameCode].lobby;
+  clearInterval(game.interval);
+  game.timer = settings.timerDuration;
+  game.interval = setInterval(() => {
+    game.timer -= 1;
+    io.to(gameCode).emit('timerUpdate', { timer: game.timer, turn: game.turn });
+    if (game.timer === 0) {
+      game.timer = game.timerDuration;
+      game.gamePlayers[game.turn].lives--;
+      if(game.gamePlayers[game.turn].lives === 0) {
+        game.gamePlayers[game.turn].alive = false;
+        if(game.gamePlayers.filter((player) => player.alive).length < 2) {
+          game.winner = game.gamePlayers.filter((player) => player.alive)[0].name;
+          game.gamePlayers = [];
+          io.to(gameCode).emit('endGame');
+          io.to(gameCode).emit('gameUpdate', {
+            lobbyPlayers: lobby.lobbyPlayers,
+            gamePlayers: [],
+            turn: 0,
+            prompt: game.prompt,
+            timer: game.timer,
+            winner: game.winner
+          });
+          clearInterval(game.interval);
           return;
         }
       }
-      turn = incrementTurn(gamePlayers, turn);
-      io.emit('gameUpdate', { lobbyPlayers, gamePlayers, turn, prompt, timer });
+      game.turn = incrementTurn(game.gamePlayers, game.turn);
+      io.to(gameCode).emit('gameUpdate', {
+        lobbyPlayers: lobby.lobbyPlayers,
+        gamePlayers: game.gamePlayers,
+        turn: game.turn,
+        prompt: game.prompt,
+        timer: game.timer
+      });
     }
   }, 1000);
 };
 
-const startStartTimer = () => {
-  interval = setInterval(() => {
-    startTimer--;
-    io.emit('startTimerUpdate', { startTimer });
-    if(startTimer === 0) {
-      prompt = getRandomPrompt();
-      clearInterval(interval);
-      io.emit('startGame');
-      io.emit('gameUpdate', { lobbyPlayers, gamePlayers, turn, prompt, timer });
-      startTimer = 15;
-      startTurnTimer();
+const startStartTimer = (gameCode) => {
+  const game = games[gameCode].game;
+  const lobby = games[gameCode].lobby;
+  game.interval = setInterval(() => {
+    game.startTimer--;
+    io.to(gameCode).emit('startTimerUpdate', { startTimer: game.startTimer });
+    if(game.startTimer === 0) {
+      game.prompt = getRandomPrompt();
+      clearInterval(game.interval);
+      io.to(gameCode).emit('startGame');
+      io.to(gameCode).emit('gameUpdate', {
+        lobbyPlayers: lobby.lobbyPlayers,
+        gamePlayers: game.gamePlayers,
+        turn: game.turn,
+        prompt: game.prompt,
+        timer: game.timer
+      });
+      game.startTimer = 15;
+      startTurnTimer(gameCode);
       return;
     }
   }, 1000);
@@ -97,117 +98,269 @@ const startStartTimer = () => {
 io.on('connection', (socket) => {
   console.log('New client connected');
 
-  // Send initial game state to the new client
-  socket.emit('gameUpdate', { lobbyPlayers, gamePlayers, turn, prompt, timer });
-
-  // Handle player joining
-  socket.on('joinGame', (data) => {
-    gamePlayers.push({ name: data.username, lives: startingLives, alive: true });
-    if(gamePlayers.length > 1) {
-      startStartTimer();
-    }
-    io.emit('gameUpdate', { lobbyPlayers, gamePlayers, turn, prompt, timer });
+  socket.on('createGame', ({visibility, lobbyName}, callback) => {
+    console.log(visibility);
+    console.log(lobbyName);
+    console.log(callback);
+    const gameCode = generateGameCode();
+    games[gameCode] = {
+      game: {
+        gamePlayers: [],
+        prompt: '',
+        word: '',
+        timer: 60,
+        turn: 0,
+        interval: null,
+        startTimer: 15
+      },
+      lobby: {
+        lobbyPlayers: [],
+        messageLog: [],
+        lobbyName
+      },
+      settings: {
+        visibility: visibility,
+        timerDuration: 5,
+        startingLives: 2,
+        maxLives: 3,
+        difficulty: 500,
+      },
+      roles: {}
+    };
+    socket.join(gameCode);
+    callback(gameCode);
   });
 
   // Handle player joining
-  socket.on('leaveGame', (data) => {
-    gamePlayers = gamePlayers.filter((p) => p.name !== data.username);
-    io.emit('gameUpdate', { lobbyPlayers, gamePlayers, turn, prompt, timer });
-  });
-
-  socket.on('typeChar', (data) => {
-    for(let p of gamePlayers) {
-      if(data.name === p.name) {
-        p.inputVal = data.inputVal;
+  socket.on('joinGame', ({gameCode, data}) => {
+    if(games[gameCode]) {
+      const game = games[gameCode].game;
+      const lobby = games[gameCode].lobby;
+      const settings = games[gameCode].settings;
+      game.gamePlayers.push({ name: data.username, lives: settings.startingLives, alive: true });
+      if(game.gamePlayers.length > 1) {
+        startStartTimer(gameCode);
       }
+      io.emit('gameUpdate', {
+        lobbyPlayers: lobby.lobbyPlayers,
+        gamePlayers: game.gamePlayers,
+        turn: game.turn,
+        prompt: game.prompt,
+        timer: game.timer
+      });
     }
-    io.emit('gameUpdate', { lobbyPlayers, gamePlayers, turn, prompt, timer });
+    else {
+      console.error(`Game not found: ${gameCode}`);
+      socket.emit('error', `Game not found: ${gameCode}`);
+    }
+  });
+
+  // Handle player joining
+  socket.on('leaveGame', ({gameCode, data}) => {
+    if(games[gameCode]) {
+      const game = games[gameCode].game;
+      const lobby = games[gameCode].lobby;
+      game.gamePlayers = game.gamePlayers.filter((p) => p.name !== data.username);
+      io.emit('gameUpdate', {
+        lobbyPlayers: lobby.lobbyPlayers,
+        gamePlayers: game.gamePlayers,
+        turn: game.turn,
+        prompt: game.prompt,
+        timer: game.turn
+      });
+    }
+    else {
+      console.error(`Game not found: ${gameCode}`);
+      socket.emit('error', `Game not found: ${gameCode}`);
+    }
+  });
+
+  socket.on('typeChar', ({gameCode, data}) => {
+    if(games[gameCode]) {
+      const game = games[gameCode].game;
+      const lobby = games[gameCode].lobby;
+      for(let p of game.gamePlayers) {
+        if(data.name === p.name) {
+          p.inputVal = data.inputVal;
+        }
+      }
+      io.to(gameCode).emit('gameUpdate', {
+        lobbyPlayers: lobby.lobbyPlayers,
+        gamePlayers: game.gamePlayers,
+        turn: game.turn,
+        prompt: game.prompt,
+        timer: game.timer
+      });
+    }
+    else {
+      console.error(`Game not found: ${gameCode}`);
+      socket.emit('error', `Game not found: ${gameCode}`);
+    }
   });
 
   // Handle word submission
-  socket.on('submitWord', (data) => {
-    word = data.word;
-    if(word === '/BOOM') {
-      timer = timerDuration;
-      gamePlayers[turn].lives--;
-      if(gamePlayers[turn].lives === 0) {
-        gamePlayers[turn].alive = false;
-        if(gamePlayers.filter((player) => player.alive).length < 2) {
-          const winner = gamePlayers.filter((player) => player.alive)[0].name;
-          gamePlayers = [];
-          io.emit('endGame');
-          io.emit('gameUpdate', { lobbyPlayers, gamePlayers: [], turn: 0, prompt, timer, winner });
-          clearInterval(interval);
-          return;
+  socket.on('submitWord', ({gameCode, data}) => {
+    if(games[gameCode]) {
+      const game = games[gameCode].game;
+      const lobby = games[gameCode].lobby;
+      const settings = games[gameCode].settings;
+      game.word = data.word;
+      if(game.word === '/BOOM') {
+        game.timer = settings.timerDuration;
+        game.gamePlayers[game.turn].lives--;
+        if(game.gamePlayers[game.turn].lives === 0) {
+          game.gamePlayers[game.turn].alive = false;
+          if(game.gamePlayers.filter((player) => player.alive).length < 2) {
+            game.winner = game.gamePlayers.filter((player) => player.alive)[0].name;
+            game.gamePlayers = [];
+            io.to(gameCode).emit('endGame');
+            io.to(gameCode).emit('gameUpdate', {
+              lobbyPlayers: lobby.lobbyPlayers,
+              gamePlayers: [],
+              turn: 0,
+              prompt: game.prompt,
+              timer: game.timer,
+              winner: game.winner
+            });
+            clearInterval(game.interval);
+            return;
+          }
         }
+        game.turn = incrementTurn(game.gamePlayers, game.turn);
+        game.prompt = getRandomPrompt();
       }
-      turn = incrementTurn(gamePlayers, turn);
-      prompt = getRandomPrompt();
+      else if(verifyRealWord(game.word) && game.word.includes(game.prompt)) {
+        game.turn = incrementTurn(game.gamePlayers, game.turn);
+        game.prompt = getRandomPrompt();
+        game.timer = settings.timerDuration;
+      }
+      io.to(gameCode).emit('gameUpdate', {
+        lobbyPlayers: lobby.lobbyPlayers,
+        gamePlayers: game.gamePlayers,
+        turn: game.turn,
+        prompt: game.prompt,
+        timer: game.timer
+      });
     }
-    else if(verifyRealWord(word) && word.includes(prompt)) {
-      turn = incrementTurn(gamePlayers, turn);
-      prompt = getRandomPrompt();
-      timer = timerDuration;
+    else {
+      console.error(`Game not found: ${gameCode}`);
+      socket.emit('error', `Game not found: ${gameCode}`);
     }
-    io.emit('gameUpdate', { lobbyPlayers, gamePlayers, turn, prompt, timer });
   });
 
   // Handle settings update
-  socket.on('updateSettings', (data) => {
+  socket.on('updateSettings', ({gameCode, data}) => {
     console.log(data);
-    visibility = data.visibility;
-    timerDuration = data.timer;
-    startingLives = data.lives;
-    maxLives = data.maxLives;
-    difficulty = data.difficulty;
-    console.log(`=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
-    console.log(`Visibility: ${visibility}\nTimer: ${timerDuration}\nStarting Lives: ${startingLives}\nMax Lives: ${maxLives}\nDifficulty: ${difficulty}`);
-    io.emit('settingsUpdate', { visibility, timer: timerDuration, lives: startingLives, maxLives, difficulty });
+    if(games[gameCode]) {
+      const settings = games[gameCode].settings;
+      settings.visibility = data.visibility;
+      settings.timerDuration = data.timer;
+      settings.startingLives = data.lives;
+      settings.maxLives = data.maxLives;
+      settings.difficulty = data.difficulty;
+      console.log(`=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
+      console.log(`Visibility: ${settings.visibility}\nTimer: ${settings.timerDuration}\nStarting Lives: ${settings.startingLives}\nMax Lives: ${settings.maxLives}\nDifficulty: ${settings.difficulty}`);
+      io.to(gameCode).emit('settingsUpdate', {
+        visibility: settings.visibility,
+        timer: settings.timerDuration,
+        lives: settings.startingLives,
+        maxLives: settings.maxLives,
+        difficulty: settings.difficulty
+      });
+    }
+    else {
+      console.error(`Game not found: ${gameCode}`);
+      socket.emit('error', `Game not found: ${gameCode}`);
+    }
   });
 
   // Handle Settings tab init
-  socket.on('getSettings', () => {
-    io.emit('settingsUpdate', { visibility, timer: timerDuration, lives: startingLives, maxLives, difficulty });
+  socket.on('getSettings', ({gameCode}) => {
+    if(games[gameCode]) {
+      const settings = games[gameCode].settings;
+      io.to(gameCode).emit('settingsUpdate', {
+        visibility: settings.visibility,
+        timer: settings.timerDuration,
+        lives: settings.startingLives,
+        maxLives: settings.maxLives,
+        difficulty: settings.difficulty
+      });
+    }
+    else {
+      console.error(`Game not found: ${gameCode}`);
+      socket.emit('error', `Game not found: ${gameCode}`);
+    }
   });
 
-  socket.on('authFetch', (data) => {
-    const user = lobbyPlayers.find((p) => p.name === data.username);
-    io.emit('auth', user);
-  });
-
-  // Handle player joining lobby
-  socket.on('joinLobby', (data) => {
-    if(!lobbyPlayers.find((p) => p.name === data.username)) {
-      const userToken = uuidv4();
-      const userRole = lobbyPlayers.length === 0 ? 'leader' : 'player';
-      lobbyPlayers.push({ name: data.username, token: userToken, role: userRole });
-      roles[userToken] = userRole;
-      messageLog.push({ user: '$system', message: `${data.username} has joined the lobby.` });
-      io.emit('lobbyUpdate', { lobbyPlayers, messageLog });
+  socket.on('authFetch', ({gameCode, data}) => {
+    if(games[gameCode]) {
+      const lobby = games[gameCode].lobby;
+      const user = lobby.lobbyPlayers.find((p) => p.name === data.username);
+      io.to(gameCode).emit('auth', user);
+    }
+    else {
+      console.error(`Game not found: ${gameCode}`);
+      socket.emit('error', `Game not found: ${gameCode}`);
     }
   });
 
   // Handle player joining lobby
-  socket.on('leaveLobby', (data) => {
-    console.log(`Leaving lobby: ${data.username}`);
-    const player = lobbyPlayers.find((p) => p.name === data.username);
-    lobbyPlayers = lobbyPlayers.filter((p) => p.name !== data.username);
-    if (player) roles[player.token] = undefined;
-    messageLog.push({ user: '$system', message: `${data.username} has left the lobby.` });
-    io.emit('lobbyUpdate', { lobbyPlayers, messageLog });
+  socket.on('joinLobby', ({gameCode, data}) => {
+    if(games[gameCode]) {
+      const lobby = games[gameCode].lobby;
+      const roles = games[gameCode].roles;
+      if(!lobby.lobbyPlayers.find((p) => p.name === data.username)) {
+        const userToken = uuidv4();
+        const userRole = lobby.lobbyPlayers.length === 0 ? 'leader' : 'player';
+        lobby.lobbyPlayers.push({ name: data.username, token: userToken, role: userRole });
+        roles[userToken] = userRole;
+        socket.join(gameCode);
+        lobby.messageLog.push({ user: '$system', message: `${data.username} has joined the lobby.` });
+        io.to(gameCode).emit('lobbyUpdate', { lobbyPlayers: lobby.lobbyPlayers, messageLog: lobby.messageLog });
+      }
+    }
+    else {
+      console.error(`Game not found: ${gameCode}`);
+      socket.emit('error', `Game not found: ${gameCode}`);
+    }
+  });
+
+  // Handle player joining lobby
+  socket.on('leaveLobby', ({gameCode, data}) => {
+    if(games[gameCode]) {
+      const lobby = games[gameCode].lobby;
+      const roles = games[gameCode].roles;
+      console.log(`Leaving lobby: ${data.username}`);
+      const player = lobby.lobbyPlayers.find((p) => p.name === data.username);
+      lobby.lobbyPlayers = lobby.lobbyPlayers.filter((p) => p.name !== data.username);
+      if (player) roles[player.token] = undefined;
+      lobby.messageLog.push({ user: '$system', message: `${data.username} has left the lobby.` });
+      io.to(gameCode).emit('lobbyUpdate', { lobbyPlayers: lobby.lobbyPlayers, messageLog: lobby.messageLog });
+    }
+    else {
+      console.error(`Game not found: ${gameCode}`);
+      socket.emit('error', `Game not found: ${gameCode}`);
+    }
   });
 
   // Handle chat message
-  socket.on('sendMessage', (data) => {
-    messageLog.push(data);
-    io.emit('lobbyUpdate', { lobbyPlayers, messageLog });
+  socket.on('sendMessage', ({gameCode, data}) => {
+    if(games[gameCode]) {
+      const lobby = games[gameCode].lobby;
+      lobby.messageLog.push(data);
+      io.to(gameCode).emit('lobbyUpdate', { lobbyPlayers: lobby.lobbyPlayers, messageLog: lobby.messageLog }); 
+    }
+    else {
+      console.error(`Game not found: ${gameCode}`);
+      socket.emit('error', `Game not found: ${gameCode}`);
+    }
   });
 
   // Handle client disconnect
   socket.on('disconnect', () => {
     console.log('Client disconnected');
-    lobbyPlayers = lobbyPlayers.filter(player => player.token !== socket.id);
-    io.emit('gameUpdate', { lobbyPlayers, gamePlayers, turn, prompt, timer });
+    // lobbyPlayers = lobbyPlayers.filter(player => player.token !== socket.id);
+    // io.emit('gameUpdate', { lobbyPlayers, gamePlayers, turn, prompt, timer });
   });
 });
 

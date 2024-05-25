@@ -8,4 +8,13 @@ function getRandomPrompt() {
   return letterCombinations[randomIndex].toUpperCase();
 };
 
-module.exports = { getRandomPrompt };
+function generateGameCode() {
+  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let code = '';
+  for (let i = 0; i < 4; i++) {
+    code += letters.charAt(Math.floor(Math.random() * letters.length));
+  }
+  return code;
+};
+
+module.exports = { getRandomPrompt, generateGameCode };

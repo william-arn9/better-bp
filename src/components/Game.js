@@ -4,6 +4,7 @@ import { FaHeart } from 'react-icons/fa';
 import socket from '../socket';
 import Chat from './widgets/Chat';
 import Settings from './widgets/Settings';
+import { useParams } from 'react-router-dom';
 
 
 const lifeAudio = new Audio('/assets/lost-life.mp3');
@@ -11,6 +12,7 @@ const turnAudio = new Audio('/assets/turn.mp3');
 const startAudio = new Audio('/assets/game-started.mp3');
 
 const Game = () => {
+  const { gameCode } = useParams();
   const [myUser, setMyUser] = useState('');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [gamePlayers, setGamePlayers] = useState([]);
@@ -28,7 +30,7 @@ const Game = () => {
   useEffect(() => {
     const username = sessionStorage.getItem('username');
     setMyUser(username);
-    socket.emit('joinLobby', { username });
+    socket.emit('joinLobby', { gameCode, data: { username } });
     console.log('Logged in');
     // Listen for game updates
     socket.on('gameUpdate', (data) => {
@@ -53,7 +55,7 @@ const Game = () => {
     });
     // Clean up the event listener on component unmount
     const handleBeforeUnload = () => {
-      socket.emit('leaveLobby', { username });
+      socket.emit('leaveLobby', { gameCode, data: { username } });
     };
 
     window.addEventListener('beforeunload', handleBeforeUnload);
@@ -111,17 +113,17 @@ const Game = () => {
       setGamePlayers((prevPlayers) => [...prevPlayers, player]);
       
       // Emit event to the server to inform other players
-      socket.emit('joinGame', { username });
+      socket.emit('joinGame', { gameCode, data: { username } });
     }
   };
   const handleLeaveGame = () => {
     setGamePlayers((prevPlayers) => prevPlayers.filter((p) => p.name !== myUser));
-    socket.emit('leaveGame', { username: myUser });
+    socket.emit('leaveGame', { gameCode, data: { username: myUser } });
   }
 
   const handleWordSubmit = (newWord) => {
     // Emit event to server with the new word
-    socket.emit('submitWord', { word: newWord });
+    socket.emit('submitWord', { gameCode, data: { word: newWord } });
   };
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
@@ -132,7 +134,7 @@ const Game = () => {
   const handleInputChange = (e) => {
     const inputVal = e.target.value.toUpperCase();
     setInputValue(inputVal);
-    socket.emit('typeChar', { name: myUser, inputVal });
+    socket.emit('typeChar', { gameCode, data: { name: myUser, inputVal } });
   };
   const handleToggleSettings = (e) => {
     setSettingsOpen(!settingsOpen);

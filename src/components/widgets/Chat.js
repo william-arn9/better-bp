@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import socket from '../../socket';
 
 const Chat = () => {
+  const { gameCode } = useParams();
   const [myUser, setMyUser] = useState('');
   const [lobbyPlayers, setLobbyPlayers] = useState([]);
   const [messages, setMessages] = useState([]);
@@ -22,7 +24,7 @@ const Chat = () => {
 
   const handleSendMessage = () => {
     if (input.trim() !== '') {
-      socket.emit('sendMessage', { user: myUser, message: input });
+      socket.emit('sendMessage',  {gameCode, data: { user: myUser, message: input } });
       setInput('');
     }
   };
