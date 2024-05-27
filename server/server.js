@@ -27,7 +27,56 @@ app.use(cors({
   credentials: true
 }));
 
-let games = [];
+let games = {
+  XXXX: {
+    game: {
+      gamePlayers: [],
+      prompt: '',
+      word: '',
+      timer: 60,
+      turn: 0,
+      interval: null,
+      startTimer: 15
+    },
+    lobby: {
+      lobbyPlayers: [],
+      messageLog: [],
+      lobbyName: 'Ranked BP'
+    },
+    settings: {
+      visibility: 'public',
+      timerDuration: 5,
+      startingLives: 2,
+      maxLives: 3,
+      difficulty: 100,
+    },
+    roles: {}
+  },
+  ABCD: {
+    game: {
+      gamePlayers: [],
+      prompt: '',
+      word: '',
+      timer: 60,
+      turn: 0,
+      interval: null,
+      startTimer: 15
+    },
+    lobby: {
+      lobbyPlayers: [],
+      messageLog: [],
+      lobbyName: 'Ranked BP Easy'
+    },
+    settings: {
+      visibility: 'public',
+      timerDuration: 5,
+      startingLives: 2,
+      maxLives: 3,
+      difficulty: 500,
+    },
+    roles: {}
+  }
+};
 
 const startTurnTimer = (gameCode) => {
   const game = games[gameCode].game;
@@ -99,9 +148,6 @@ io.on('connection', (socket) => {
   console.log('New client connected');
 
   socket.on('createGame', ({visibility, lobbyName}, callback) => {
-    console.log(visibility);
-    console.log(lobbyName);
-    console.log(callback);
     const gameCode = generateGameCode();
     games[gameCode] = {
       game: {
@@ -129,6 +175,22 @@ io.on('connection', (socket) => {
     };
     socket.join(gameCode);
     callback(gameCode);
+  });
+
+  socket.on('getLobbies', () => {
+    const retArray = [];
+    for(let gameCode in games) {
+      const game = games[gameCode];
+      if(game.settings.visibility === 'public') {
+        retArray.push({
+          gameCode,
+          difficulty: game.settings.difficulty,
+          name: game.lobby.lobbyName,
+          players: game.lobby.lobbyPlayers.length
+        });
+      }
+    }
+    io.emit('lobbyListUpdate', retArray);
   });
 
   // Handle player joining

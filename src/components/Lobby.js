@@ -4,37 +4,52 @@ import socket from '../socket';
 import { useNavigate } from 'react-router-dom';
 
 const Lobby = () => {
-  const [players, setPlayers] = useState([]);
+  const [lobbyList, setLobbyList] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     // Listen for game updates
-    socket.on('gameUpdate', (data) => {
-      setPlayers(data.players);
+    socket.on('lobbyListUpdate', (data) => {
+      setLobbyList(data);
     });
+
+    socket.emit('getLobbies');
 
     // Clean up the event listener on component unmount
     return () => {
-      socket.off('gameUpdate');
+      socket.off('lobbyListUpdate');
     };
   }, []);
 
-  const handleStartGame = () => {
-    // Emit an event to start the game
-    socket.emit('startGame');
-    navigate('/game');
+  const handleStartGame = (e, gameCode) => {
+    e.preventDefault();
+    navigate(`/en-US/game/${gameCode}`);
   };
 
   return (
-    <div>
-      <h1>Lobby</h1>
-      <h2>Waiting for players...</h2>
-      <ul>
-        {players.map((player, index) => (
-          <li key={index}>{player}</li>
-        ))}
-      </ul>
-      {players.length > 1 && <button onClick={handleStartGame}>Start Game</button>}
+    <div className="flex flex-col items-center">
+      <h1 className='m-6 text-center text-lg font-semibold text-primary'>Lobby List</h1>
+      <div className='w-[900px] flex justify-center gap-2'>
+        {lobbyList.length < 1 && (
+          <h3>We're sorry. There's no public lobbies to display right now.</h3>
+        )}
+        {lobbyList.length > 0 && (
+          <>
+            {lobbyList.map((lobby, index) => (
+              <button className="w-full lg:w-[280px] p-2 bg-secondary border border-2 border-primary rounded-md" onClick={(e) => handleStartGame(e, lobby.gameCode)}>
+                <div className='flex justify-between'>
+                  <h3 className="text-primary font-semibold text-start">{lobby.name}</h3>
+                  <p className="text-primary font-semibold">{lobby.players} players</p>
+                </div>
+                <div className='flex justify-between'>
+                  <p className='text-accent font-bold'>{lobby.gameCode}</p>
+                  <p className='text-primary'>Difficulty: min {lobby.difficulty}</p>
+                </div>
+              </button>
+            ))}
+          </>
+        )}
+      </div>
     </div>
   );
 };

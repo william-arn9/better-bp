@@ -20,7 +20,7 @@ const Home = () => {
     const username = sessionStorage.getItem('username');
     if (username && username.trim()) {
       // Navigate to the lobby
-      navigate('/en-US/game/XXXX');
+      navigate('/en-US/lobby');
     }
   };
 

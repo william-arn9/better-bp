@@ -7,6 +7,7 @@ const Header = () => {
   const [username, setUsername] = useState('');
   const [inputValue, setInputValue] = useState('');
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedUsername = sessionStorage.getItem('username');
@@ -31,9 +32,13 @@ const Header = () => {
     sessionStorage.setItem('username', inputValue);
   };
 
+  const handleNavigate = () => {
+    navigate('/en-US/home');
+  };
+
   return (
     <nav className="h-14 p-3 bg-secondary flex justify-between">
-      <h1 className="text-primary font-bold">Welcome to BombParty</h1>
+      <h1 className="text-primary font-bold cursor-pointer" onClick={handleNavigate}>Welcome to BombParty</h1>
       <div className="flex h-8">
         <p className="text-primary mt-1 mr-4">Hi, <span className="font-bold">{username}</span>.</p>
         {location.pathname === '/' && (
