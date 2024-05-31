@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import socket from '../../socket';
 
@@ -10,12 +10,18 @@ const Chat = () => {
   const [tab, setTab] = useState('chat');
   const [input, setInput] = useState('');
 
+  const scrollChatRef = useRef(null);
+
   useEffect(() => {
     setMyUser(sessionStorage.getItem('username'));
     socket.on('lobbyUpdate', (data) => {
       setLobbyPlayers(data.lobbyPlayers);
       setMessages(data.messageLog);
     });
+
+    if (scrollChatRef.current) {
+      scrollChatRef.current.scrollTop = scrollChatRef.current.scrollHeight;
+    }
     
     return () => {
       socket.off('receiveMessage');
@@ -50,10 +56,10 @@ const Chat = () => {
         <button id="players" className={`w-1/2 py-2 rounded-t-md border border-darkest bg-[#c2c3c4] ${tab === 'players' ? '!bg-darker' : ''}`} onClick={handleTabClick}>Players</button>
       </div>
       {tab === 'chat' && (
-        <div className="h-full p-4 flex flex-col justify-end border border-darkest">
-          <div clssName="h-full overflow-y-auto text-wrap break-all">
+        <div className="h-full max-h-[calc(100%-42px)] p-4 flex flex-col justify-end border border-darkest">
+          <div ref={scrollChatRef} className="h-full max-h-full overflow-y-scroll">
             {messages.map((message, index) => (
-              <div key={index}>
+              <div className="text-wrap break-all" key={index}>
                 {message.user !== '$system' && (<span className="font-semibold">{message.user}: </span>)}{message.message}
               </div>
             ))}

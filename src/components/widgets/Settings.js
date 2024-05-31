@@ -49,13 +49,8 @@ const Settings = () => {
     socket.emit('updateSettings', { gameCode, data: val });
   };
 
-  // const handleSubmit = () => {
-  //   console.log(settings);
-  //   socket.emit('updateSettings', settings);
-  // };
-
   return (
-    <form className="h-full flex flex-col p-4 rounded-tr-md border border-darkest bg-darker max-w-md mx-auto">
+    <form className="h-full flex flex-col p-4 rounded-tr-md border border-darkest bg-darker max-w-md mx-auto overflow-y-scroll">
       <h2 className="mb-12 text-center text-lg text-outline font-bold border-b border-darkest">Settings</h2>
       <label className="mb-4">
         <div className="flex mt-2">
