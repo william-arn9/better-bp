@@ -61,11 +61,11 @@ const Home = () => {
             </label>
           </div>
           <div className="w-full flex justify-center">
-            <button className="w-36 my-2 p-2 border border-primary text-primary rounded-md" onClick={handleCreateGame}>Create Lobby</button>
+            <button className="w-36 my-2 p-2 border-2 border-primary text-primary font-bold rounded-md" onClick={handleCreateGame}>Create Lobby</button>
           </div>
         </div>
         <div className="flex w-1/2 justify-center items-center">
-          <button className="w-36 p-2 text-primary bg-accent rounded-md" onClick={handleJoinGame}>Join Game</button>
+          <button className="w-36 p-2 text-primary font-bold bg-accent rounded-md" onClick={handleJoinGame}>Join Game</button>
         </div>
       </div>
     </div>
