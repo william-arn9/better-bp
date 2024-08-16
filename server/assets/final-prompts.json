@@ -1,0 +1,5358 @@
+[
+  {
+    "prompt": "AB",
+    "wpp": 8074
+  },
+  {
+    "prompt": "AC",
+    "wpp": 10697
+  },
+  {
+    "prompt": "AD",
+    "wpp": 6667
+  },
+  {
+    "prompt": "AI",
+    "wpp": 5238
+  },
+  {
+    "prompt": "AL",
+    "wpp": 23862
+  },
+  {
+    "prompt": "AM",
+    "wpp": 7713
+  },
+  {
+    "prompt": "AN",
+    "wpp": 23120
+  },
+  {
+    "prompt": "AP",
+    "wpp": 6893
+  },
+  {
+    "prompt": "AR",
+    "wpp": 20703
+  },
+  {
+    "prompt": "AS",
+    "wpp": 13733
+  },
+  {
+    "prompt": "AT",
+    "wpp": 28717
+  },
+  {
+    "prompt": "AU",
+    "wpp": 3784
+  },
+  {
+    "prompt": "AV",
+    "wpp": 2476
+  },
+  {
+    "prompt": "AW",
+    "wpp": 1661
+  },
+  {
+    "prompt": "AX",
+    "wpp": 856
+  },
+  {
+    "prompt": "AY",
+    "wpp": 2062
+  },
+  {
+    "prompt": "BA",
+    "wpp": 6270
+  },
+  {
+    "prompt": "BE",
+    "wpp": 6148
+  },
+  {
+    "prompt": "BI",
+    "wpp": 6491
+  },
+  {
+    "prompt": "BL",
+    "wpp": 7626
+  },
+  {
+    "prompt": "BO",
+    "wpp": 5482
+  },
+  {
+    "prompt": "BR",
+    "wpp": 4098
+  },
+  {
+    "prompt": "BU",
+    "wpp": 3462
+  },
+  {
+    "prompt": "BY",
+    "wpp": 402
+  },
+  {
+    "prompt": "CA",
+    "wpp": 13801
+  },
+  {
+    "prompt": "CE",
+    "wpp": 8931
+  },
+  {
+    "prompt": "CI",
+    "wpp": 7873
+  },
+  {
+    "prompt": "CK",
+    "wpp": 6080
+  },
+  {
+    "prompt": "CL",
+    "wpp": 3689
+  },
+  {
+    "prompt": "CO",
+    "wpp": 15664
+  },
+  {
+    "prompt": "CR",
+    "wpp": 5775
+  },
+  {
+    "prompt": "CT",
+    "wpp": 6569
+  },
+  {
+    "prompt": "CU",
+    "wpp": 4840
+  },
+  {
+    "prompt": "CY",
+    "wpp": 1811
+  },
+  {
+    "prompt": "DA",
+    "wpp": 4482
+  },
+  {
+    "prompt": "DE",
+    "wpp": 15334
+  },
+  {
+    "prompt": "DI",
+    "wpp": 13238
+  },
+  {
+    "prompt": "DO",
+    "wpp": 5039
+  },
+  {
+    "prompt": "DR",
+    "wpp": 3308
+  },
+  {
+    "prompt": "DS",
+    "wpp": 4156
+  },
+  {
+    "prompt": "DU",
+    "wpp": 2411
+  },
+  {
+    "prompt": "DY",
+    "wpp": 1054
+  },
+  {
+    "prompt": "EA",
+    "wpp": 10182
+  },
+  {
+    "prompt": "ED",
+    "wpp": 25325
+  },
+  {
+    "prompt": "EE",
+    "wpp": 5971
+  },
+  {
+    "prompt": "EF",
+    "wpp": 2771
+  },
+  {
+    "prompt": "EG",
+    "wpp": 3003
+  },
+  {
+    "prompt": "EL",
+    "wpp": 12479
+  },
+  {
+    "prompt": "EM",
+    "wpp": 7954
+  },
+  {
+    "prompt": "EP",
+    "wpp": 5399
+  },
+  {
+    "prompt": "ER",
+    "wpp": 46335
+  },
+  {
+    "prompt": "EV",
+    "wpp": 2433
+  },
+  {
+    "prompt": "EW",
+    "wpp": 1976
+  },
+  {
+    "prompt": "EX",
+    "wpp": 3479
+  },
+  {
+    "prompt": "EY",
+    "wpp": 1443
+  },
+  {
+    "prompt": "FA",
+    "wpp": 2822
+  },
+  {
+    "prompt": "FE",
+    "wpp": 3633
+  },
+  {
+    "prompt": "FF",
+    "wpp": 2455
+  },
+  {
+    "prompt": "FL",
+    "wpp": 3163
+  },
+  {
+    "prompt": "FR",
+    "wpp": 2078
+  },
+  {
+    "prompt": "FT",
+    "wpp": 1062
+  },
+  {
+    "prompt": "FO",
+    "wpp": 3773
+  },
+  {
+    "prompt": "GA",
+    "wpp": 5228
+  },
+  {
+    "prompt": "GE",
+    "wpp": 8780
+  },
+  {
+    "prompt": "GH",
+    "wpp": 2350
+  },
+  {
+    "prompt": "GI",
+    "wpp": 6334
+  },
+  {
+    "prompt": "GL",
+    "wpp": 3738
+  },
+  {
+    "prompt": "GO",
+    "wpp": 3300
+  },
+  {
+    "prompt": "GR",
+    "wpp": 5475
+  },
+  {
+    "prompt": "GU",
+    "wpp": 2589
+  },
+  {
+    "prompt": "GY",
+    "wpp": 1172
+  },
+  {
+    "prompt": "HA",
+    "wpp": 8939
+  },
+  {
+    "prompt": "HE",
+    "wpp": 13262
+  },
+  {
+    "prompt": "HI",
+    "wpp": 9974
+  },
+  {
+    "prompt": "HM",
+    "wpp": 598
+  },
+  {
+    "prompt": "HU",
+    "wpp": 1937
+  },
+  {
+    "prompt": "HY",
+    "wpp": 3914
+  },
+  {
+    "prompt": "IB",
+    "wpp": 2787
+  },
+  {
+    "prompt": "IC",
+    "wpp": 19439
+  },
+  {
+    "prompt": "ID",
+    "wpp": 7400
+  },
+  {
+    "prompt": "IE",
+    "wpp": 16041
+  },
+  {
+    "prompt": "IG",
+    "wpp": 5028
+  },
+  {
+    "prompt": "IL",
+    "wpp": 11380
+  },
+  {
+    "prompt": "IM",
+    "wpp": 5901
+  },
+  {
+    "prompt": "IN",
+    "wpp": 47450
+  },
+  {
+    "prompt": "IO",
+    "wpp": 14734
+  },
+  {
+    "prompt": "IQ",
+    "wpp": 387
+  },
+  {
+    "prompt": "IR",
+    "wpp": 5325
+  },
+  {
+    "prompt": "IT",
+    "wpp": 16338
+  },
+  {
+    "prompt": "IX",
+    "wpp": 544
+  },
+  {
+    "prompt": "JA",
+    "wpp": 1040
+  },
+  {
+    "prompt": "JE",
+    "wpp": 805
+  },
+  {
+    "prompt": "JI",
+    "wpp": 352
+  },
+  {
+    "prompt": "JO",
+    "wpp": 799
+  },
+  {
+    "prompt": "JU",
+    "wpp": 925
+  },
+  {
+    "prompt": "KA",
+    "wpp": 1678
+  },
+  {
+    "prompt": "KE",
+    "wpp": 5991
+  },
+  {
+    "prompt": "KI",
+    "wpp": 4140
+  },
+  {
+    "prompt": "KN",
+    "wpp": 625
+  },
+  {
+    "prompt": "KS",
+    "wpp": 2649
+  },
+  {
+    "prompt": "LA",
+    "wpp": 15970
+  },
+  {
+    "prompt": "LD",
+    "wpp": 1819
+  },
+  {
+    "prompt": "LE",
+    "wpp": 23084
+  },
+  {
+    "prompt": "LI",
+    "wpp": 23708
+  },
+  {
+    "prompt": "LK",
+    "wpp": 762
+  },
+  {
+    "prompt": "LL",
+    "wpp": 12391
+  },
+  {
+    "prompt": "LM",
+    "wpp": 869
+  },
+  {
+    "prompt": "LO",
+    "wpp": 12650
+  },
+  {
+    "prompt": "LS",
+    "wpp": 4128
+  },
+  {
+    "prompt": "MA",
+    "wpp": 12059
+  },
+  {
+    "prompt": "MB",
+    "wpp": 3333
+  },
+  {
+    "prompt": "ME",
+    "wpp": 13037
+  },
+  {
+    "prompt": "MO",
+    "wpp": 8079
+  },
+  {
+    "prompt": "MP",
+    "wpp": 5000
+  },
+  {
+    "prompt": "MU",
+    "wpp": 2876
+  },
+  {
+    "prompt": "MY",
+    "wpp": 1209
+  },
+  {
+    "prompt": "NA",
+    "wpp": 10429
+  },
+  {
+    "prompt": "ND",
+    "wpp": 9525
+  },
+  {
+    "prompt": "NE",
+    "wpp": 21601
+  },
+  {
+    "prompt": "NI",
+    "wpp": 13961
+  },
+  {
+    "prompt": "NO",
+    "wpp": 8839
+  },
+  {
+    "prompt": "NT",
+    "wpp": 17768
+  },
+  {
+    "prompt": "NU",
+    "wpp": 2082
+  },
+  {
+    "prompt": "NY",
+    "wpp": 1036
+  },
+  {
+    "prompt": "OA",
+    "wpp": 2511
+  },
+  {
+    "prompt": "OB",
+    "wpp": 3193
+  },
+  {
+    "prompt": "OC",
+    "wpp": 6238
+  },
+  {
+    "prompt": "OD",
+    "wpp": 4581
+  },
+  {
+    "prompt": "OE",
+    "wpp": 1814
+  },
+  {
+    "prompt": "OF",
+    "wpp": 1321
+  },
+  {
+    "prompt": "OG",
+    "wpp": 7457
+  },
+  {
+    "prompt": "OH",
+    "wpp": 465
+  },
+  {
+    "prompt": "OI",
+    "wpp": 3533
+  },
+  {
+    "prompt": "OK",
+    "wpp": 1466
+  },
+  {
+    "prompt": "OL",
+    "wpp": 12394
+  },
+  {
+    "prompt": "OM",
+    "wpp": 10118
+  },
+  {
+    "prompt": "ON",
+    "wpp": 27771
+  },
+  {
+    "prompt": "OO",
+    "wpp": 6138
+  },
+  {
+    "prompt": "OP",
+    "wpp": 8403
+  },
+  {
+    "prompt": "OR",
+    "wpp": 18870
+  },
+  {
+    "prompt": "OS",
+    "wpp": 9717
+  },
+  {
+    "prompt": "OT",
+    "wpp": 8192
+  },
+  {
+    "prompt": "OU",
+    "wpp": 12213
+  },
+  {
+    "prompt": "OV",
+    "wpp": 4051
+  },
+  {
+    "prompt": "OW",
+    "wpp": 3844
+  },
+  {
+    "prompt": "OX",
+    "wpp": 1248
+  },
+  {
+    "prompt": "OY",
+    "wpp": 869
+  },
+  {
+    "prompt": "PA",
+    "wpp": 8273
+  },
+  {
+    "prompt": "PE",
+    "wpp": 11537
+  },
+  {
+    "prompt": "PH",
+    "wpp": 8519
+  },
+  {
+    "prompt": "PI",
+    "wpp": 7448
+  },
+  {
+    "prompt": "PL",
+    "wpp": 5066
+  },
+  {
+    "prompt": "PP",
+    "wpp": 2788
+  },
+  {
+    "prompt": "PR",
+    "wpp": 8389
+  },
+  {
+    "prompt": "PS",
+    "wpp": 2998
+  },
+  {
+    "prompt": "PU",
+    "wpp": 2687
+  },
+  {
+    "prompt": "PY",
+    "wpp": 1054
+  },
+  {
+    "prompt": "RA",
+    "wpp": 23001
+  },
+  {
+    "prompt": "RE",
+    "wpp": 27736
+  },
+  {
+    "prompt": "RF",
+    "wpp": 1118
+  },
+  {
+    "prompt": "RI",
+    "wpp": 24309
+  },
+  {
+    "prompt": "RK",
+    "wpp": 1757
+  },
+  {
+    "prompt": "RO",
+    "wpp": 18416
+  },
+  {
+    "prompt": "RU",
+    "wpp": 4239
+  },
+  {
+    "prompt": "RY",
+    "wpp": 3944
+  },
+  {
+    "prompt": "SA",
+    "wpp": 6888
+  },
+  {
+    "prompt": "SC",
+    "wpp": 6738
+  },
+  {
+    "prompt": "SE",
+    "wpp": 21186
+  },
+  {
+    "prompt": "SH",
+    "wpp": 8852
+  },
+  {
+    "prompt": "SI",
+    "wpp": 11919
+  },
+  {
+    "prompt": "SK",
+    "wpp": 1662
+  },
+  {
+    "prompt": "SL",
+    "wpp": 2566
+  },
+  {
+    "prompt": "SM",
+    "wpp": 5340
+  },
+  {
+    "prompt": "SP",
+    "wpp": 5930
+  },
+  {
+    "prompt": "ST",
+    "wpp": 24863
+  },
+  {
+    "prompt": "SU",
+    "wpp": 6237
+  },
+  {
+    "prompt": "SW",
+    "wpp": 1257
+  },
+  {
+    "prompt": "TA",
+    "wpp": 13357
+  },
+  {
+    "prompt": "TE",
+    "wpp": 28834
+  },
+  {
+    "prompt": "TH",
+    "wpp": 9943
+  },
+  {
+    "prompt": "TI",
+    "wpp": 33487
+  },
+  {
+    "prompt": "TO",
+    "wpp": 13150
+  },
+  {
+    "prompt": "TR",
+    "wpp": 13226
+  },
+  {
+    "prompt": "TT",
+    "wpp": 4811
+  },
+  {
+    "prompt": "TU",
+    "wpp": 4896
+  },
+  {
+    "prompt": "TW",
+    "wpp": 917
+  },
+  {
+    "prompt": "UE",
+    "wpp": 2473
+  },
+  {
+    "prompt": "UG",
+    "wpp": 1873
+  },
+  {
+    "prompt": "UH",
+    "wpp": 70
+  },
+  {
+    "prompt": "UI",
+    "wpp": 2976
+  },
+  {
+    "prompt": "UK",
+    "wpp": 431
+  },
+  {
+    "prompt": "UL",
+    "wpp": 8747
+  },
+  {
+    "prompt": "UM",
+    "wpp": 5876
+  },
+  {
+    "prompt": "UN",
+    "wpp": 12718
+  },
+  {
+    "prompt": "UP",
+    "wpp": 3341
+  },
+  {
+    "prompt": "UR",
+    "wpp": 9836
+  },
+  {
+    "prompt": "US",
+    "wpp": 10360
+  },
+  {
+    "prompt": "UT",
+    "wpp": 7059
+  },
+  {
+    "prompt": "UZ",
+    "wpp": 240
+  },
+  {
+    "prompt": "VA",
+    "wpp": 3481
+  },
+  {
+    "prompt": "VE",
+    "wpp": 11303
+  },
+  {
+    "prompt": "VO",
+    "wpp": 1810
+  },
+  {
+    "prompt": "WA",
+    "wpp": 3923
+  },
+  {
+    "prompt": "WE",
+    "wpp": 2804
+  },
+  {
+    "prompt": "WH",
+    "wpp": 1256
+  },
+  {
+    "prompt": "WI",
+    "wpp": 2744
+  },
+  {
+    "prompt": "WO",
+    "wpp": 2600
+  },
+  {
+    "prompt": "WR",
+    "wpp": 601
+  },
+  {
+    "prompt": "YA",
+    "wpp": 1202
+  },
+  {
+    "prompt": "YE",
+    "wpp": 1331
+  },
+  {
+    "prompt": "YI",
+    "wpp": 1284
+  },
+  {
+    "prompt": "YO",
+    "wpp": 962
+  },
+  {
+    "prompt": "YU",
+    "wpp": 149
+  },
+  {
+    "prompt": "ZA",
+    "wpp": 1722
+  },
+  {
+    "prompt": "ZE",
+    "wpp": 5129
+  },
+  {
+    "prompt": "ZO",
+    "wpp": 1166
+  },
+  {
+    "prompt": "AAL",
+    "wpp": 44
+  },
+  {
+    "prompt": "ABB",
+    "wpp": 477
+  },
+  {
+    "prompt": "ABL",
+    "wpp": 3715
+  },
+  {
+    "prompt": "ABO",
+    "wpp": 596
+  },
+  {
+    "prompt": "ABS",
+    "wpp": 321
+  },
+  {
+    "prompt": "ABY",
+    "wpp": 75
+  },
+  {
+    "prompt": "ACC",
+    "wpp": 784
+  },
+  {
+    "prompt": "ACE",
+    "wpp": 1356
+  },
+  {
+    "prompt": "ACH",
+    "wpp": 1437
+  },
+  {
+    "prompt": "ACI",
+    "wpp": 1032
+  },
+  {
+    "prompt": "ACK",
+    "wpp": 1961
+  },
+  {
+    "prompt": "ACO",
+    "wpp": 455
+  },
+  {
+    "prompt": "ADJ",
+    "wpp": 139
+  },
+  {
+    "prompt": "ADV",
+    "wpp": 245
+  },
+  {
+    "prompt": "AFF",
+    "wpp": 694
+  },
+  {
+    "prompt": "AGA",
+    "wpp": 363
+  },
+  {
+    "prompt": "AGE",
+    "wpp": 1957
+  },
+  {
+    "prompt": "AGI",
+    "wpp": 685
+  },
+  {
+    "prompt": "AGO",
+    "wpp": 585
+  },
+  {
+    "prompt": "AGS",
+    "wpp": 157
+  },
+  {
+    "prompt": "AHA",
+    "wpp": 87
+  },
+  {
+    "prompt": "AIL",
+    "wpp": 1062
+  },
+  {
+    "prompt": "AIR",
+    "wpp": 799
+  },
+  {
+    "prompt": "AIT",
+    "wpp": 283
+  },
+  {
+    "prompt": "AIV",
+    "wpp": 38
+  },
+  {
+    "prompt": "AKA",
+    "wpp": 142
+  },
+  {
+    "prompt": "AKE",
+    "wpp": 954
+  },
+  {
+    "prompt": "ALK",
+    "wpp": 402
+  },
+  {
+    "prompt": "ALM",
+    "wpp": 395
+  },
+  {
+    "prompt": "ALO",
+    "wpp": 906
+  },
+  {
+    "prompt": "ALP",
+    "wpp": 226
+  },
+  {
+    "prompt": "ALR",
+    "wpp": 35
+  },
+  {
+    "prompt": "ALS",
+    "wpp": 1198
+  },
+  {
+    "prompt": "ALT",
+    "wpp": 624
+  },
+  {
+    "prompt": "AMA",
+    "wpp": 761
+  },
+  {
+    "prompt": "AMB",
+    "wpp": 794
+  },
+  {
+    "prompt": "AMS",
+    "wpp": 430
+  },
+  {
+    "prompt": "AMI",
+    "wpp": 1315
+  },
+  {
+    "prompt": "AMP",
+    "wpp": 921
+  },
+  {
+    "prompt": "AMU",
+    "wpp": 125
+  },
+  {
+    "prompt": "AND",
+    "wpp": 2755
+  },
+  {
+    "prompt": "ANE",
+    "wpp": 1207
+  },
+  {
+    "prompt": "ANG",
+    "wpp": 1717
+  },
+  {
+    "prompt": "ANI",
+    "wpp": 2383
+  },
+  {
+    "prompt": "ANK",
+    "wpp": 617
+  },
+  {
+    "prompt": "ANN",
+    "wpp": 845
+  },
+  {
+    "prompt": "ANT",
+    "wpp": 4679
+  },
+  {
+    "prompt": "ANY",
+    "wpp": 108
+  },
+  {
+    "prompt": "APE",
+    "wpp": 681
+  },
+  {
+    "prompt": "APP",
+    "wpp": 1207
+  },
+  {
+    "prompt": "AQU",
+    "wpp": 226
+  },
+  {
+    "prompt": "ARA",
+    "wpp": 1789
+  },
+  {
+    "prompt": "ARC",
+    "wpp": 1130
+  },
+  {
+    "prompt": "ARD",
+    "wpp": 2113
+  },
+  {
+    "prompt": "ARE",
+    "wpp": 1375
+  },
+  {
+    "prompt": "ARF",
+    "wpp": 166
+  },
+  {
+    "prompt": "ARK",
+    "wpp": 666
+  },
+  {
+    "prompt": "ARM",
+    "wpp": 723
+  },
+  {
+    "prompt": "ARP",
+    "wpp": 418
+  },
+  {
+    "prompt": "ARS",
+    "wpp": 1002
+  },
+  {
+    "prompt": "ARY",
+    "wpp": 875
+  },
+  {
+    "prompt": "ASK",
+    "wpp": 203
+  },
+  {
+    "prompt": "ASP",
+    "wpp": 369
+  },
+  {
+    "prompt": "AST",
+    "wpp": 2923
+  },
+  {
+    "prompt": "ATE",
+    "wpp": 7872
+  },
+  {
+    "prompt": "ATH",
+    "wpp": 1639
+  },
+  {
+    "prompt": "ATM",
+    "wpp": 80
+  },
+  {
+    "prompt": "ATO",
+    "wpp": 2803
+  },
+  {
+    "prompt": "ATS",
+    "wpp": 577
+  },
+  {
+    "prompt": "ATT",
+    "wpp": 1242
+  },
+  {
+    "prompt": "AUG",
+    "wpp": 300
+  },
+  {
+    "prompt": "AUN",
+    "wpp": 497
+  },
+  {
+    "prompt": "AUR",
+    "wpp": 331
+  },
+  {
+    "prompt": "AUT",
+    "wpp": 836
+  },
+  {
+    "prompt": "AVA",
+    "wpp": 425
+  },
+  {
+    "prompt": "AVE",
+    "wpp": 989
+  },
+  {
+    "prompt": "AVO",
+    "wpp": 320
+  },
+  {
+    "prompt": "AWA",
+    "wpp": 253
+  },
+  {
+    "prompt": "AWE",
+    "wpp": 132
+  },
+  {
+    "prompt": "AWK",
+    "wpp": 133
+  },
+  {
+    "prompt": "AWL",
+    "wpp": 169
+  },
+  {
+    "prompt": "AWN",
+    "wpp": 187
+  },
+  {
+    "prompt": "AWS",
+    "wpp": 173
+  },
+  {
+    "prompt": "AXE",
+    "wpp": 193
+  },
+  {
+    "prompt": "AYI",
+    "wpp": 171
+  },
+  {
+    "prompt": "AZE",
+    "wpp": 292
+  },
+  {
+    "prompt": "AZY",
+    "wpp": 29
+  },
+  {
+    "prompt": "BAB",
+    "wpp": 206
+  },
+  {
+    "prompt": "BAC",
+    "wpp": 925
+  },
+  {
+    "prompt": "BAD",
+    "wpp": 94
+  },
+  {
+    "prompt": "BAK",
+    "wpp": 89
+  },
+  {
+    "prompt": "BAP",
+    "wpp": 77
+  },
+  {
+    "prompt": "BAR",
+    "wpp": 1011
+  },
+  {
+    "prompt": "BAS",
+    "wpp": 628
+  },
+  {
+    "prompt": "BAT",
+    "wpp": 712
+  },
+  {
+    "prompt": "BEA",
+    "wpp": 530
+  },
+  {
+    "prompt": "BEC",
+    "wpp": 202
+  },
+  {
+    "prompt": "BEG",
+    "wpp": 206
+  },
+  {
+    "prompt": "BEI",
+    "wpp": 65
+  },
+  {
+    "prompt": "BEN",
+    "wpp": 439
+  },
+  {
+    "prompt": "BER",
+    "wpp": 1471
+  },
+  {
+    "prompt": "BEY",
+    "wpp": 32
+  },
+  {
+    "prompt": "BIB",
+    "wpp": 124
+  },
+  {
+    "prompt": "BIG",
+    "wpp": 121
+  },
+  {
+    "prompt": "BIK",
+    "wpp": 31
+  },
+  {
+    "prompt": "BIN",
+    "wpp": 760
+  },
+  {
+    "prompt": "BIR",
+    "wpp": 345
+  },
+  {
+    "prompt": "BIT",
+    "wpp": 735
+  },
+  {
+    "prompt": "BLA",
+    "wpp": 794
+  },
+  {
+    "prompt": "BLE",
+    "wpp": 4555
+  },
+  {
+    "prompt": "BLO",
+    "wpp": 488
+  },
+  {
+    "prompt": "BOD",
+    "wpp": 187
+  },
+  {
+    "prompt": "BOG",
+    "wpp": 133
+  },
+  {
+    "prompt": "BOK",
+    "wpp": 56
+  },
+  {
+    "prompt": "BOM",
+    "wpp": 128
+  },
+  {
+    "prompt": "BOO",
+    "wpp": 545
+  },
+  {
+    "prompt": "BOP",
+    "wpp": 48
+  },
+  {
+    "prompt": "BOX",
+    "wpp": 221
+  },
+  {
+    "prompt": "BOY",
+    "wpp": 168
+  },
+  {
+    "prompt": "BRA",
+    "wpp": 1288
+  },
+  {
+    "prompt": "BRE",
+    "wpp": 763
+  },
+  {
+    "prompt": "BRU",
+    "wpp": 264
+  },
+  {
+    "prompt": "BUC",
+    "wpp": 198
+  },
+  {
+    "prompt": "BUD",
+    "wpp": 102
+  },
+  {
+    "prompt": "BUG",
+    "wpp": 124
+  },
+  {
+    "prompt": "BUL",
+    "wpp": 657
+  },
+  {
+    "prompt": "BUM",
+    "wpp": 158
+  },
+  {
+    "prompt": "BUN",
+    "wpp": 241
+  },
+  {
+    "prompt": "BUR",
+    "wpp": 633
+  },
+  {
+    "prompt": "BUS",
+    "wpp": 528
+  },
+  {
+    "prompt": "BUT",
+    "wpp": 433
+  },
+  {
+    "prompt": "BUY",
+    "wpp": 31
+  },
+  {
+    "prompt": "BUZ",
+    "wpp": 29
+  },
+  {
+    "prompt": "BYS",
+    "wpp": 41
+  },
+  {
+    "prompt": "CAB",
+    "wpp": 358
+  },
+  {
+    "prompt": "CAD",
+    "wpp": 289
+  },
+  {
+    "prompt": "CAF",
+    "wpp": 63
+  },
+  {
+    "prompt": "CAG",
+    "wpp": 112
+  },
+  {
+    "prompt": "CAM",
+    "wpp": 450
+  },
+  {
+    "prompt": "CAS",
+    "wpp": 748
+  },
+  {
+    "prompt": "CAT",
+    "wpp": 2551
+  },
+  {
+    "prompt": "CAU",
+    "wpp": 274
+  },
+  {
+    "prompt": "CAV",
+    "wpp": 180
+  },
+  {
+    "prompt": "CED",
+    "wpp": 581
+  },
+  {
+    "prompt": "CEL",
+    "wpp": 616
+  },
+  {
+    "prompt": "CEO",
+    "wpp": 255
+  },
+  {
+    "prompt": "CHE",
+    "wpp": 2987
+  },
+  {
+    "prompt": "CHI",
+    "wpp": 2570
+  },
+  {
+    "prompt": "CHU",
+    "wpp": 359
+  },
+  {
+    "prompt": "CID",
+    "wpp": 582
+  },
+  {
+    "prompt": "CIG",
+    "wpp": 26
+  },
+  {
+    "prompt": "CIR",
+    "wpp": 315
+  },
+  {
+    "prompt": "CIS",
+    "wpp": 969
+  },
+  {
+    "prompt": "CIT",
+    "wpp": 859
+  },
+  {
+    "prompt": "CKS",
+    "wpp": 1265
+  },
+  {
+    "prompt": "CKY",
+    "wpp": 109
+  },
+  {
+    "prompt": "CLA",
+    "wpp": 944
+  },
+  {
+    "prompt": "CLE",
+    "wpp": 1003
+  },
+  {
+    "prompt": "COA",
+    "wpp": 429
+  },
+  {
+    "prompt": "COB",
+    "wpp": 103
+  },
+  {
+    "prompt": "COF",
+    "wpp": 79
+  },
+  {
+    "prompt": "COI",
+    "wpp": 273
+  },
+  {
+    "prompt": "COM",
+    "wpp": 2123
+  },
+  {
+    "prompt": "COO",
+    "wpp": 351
+  },
+  {
+    "prompt": "COR",
+    "wpp": 1488
+  },
+  {
+    "prompt": "COS",
+    "wpp": 587
+  },
+  {
+    "prompt": "COU",
+    "wpp": 1156
+  },
+  {
+    "prompt": "COV",
+    "wpp": 205
+  },
+  {
+    "prompt": "COW",
+    "wpp": 205
+  },
+  {
+    "prompt": "COY",
+    "wpp": 57
+  },
+  {
+    "prompt": "COZ",
+    "wpp": 31
+  },
+  {
+    "prompt": "CRA",
+    "wpp": 1324
+  },
+  {
+    "prompt": "CRE",
+    "wpp": 1143
+  },
+  {
+    "prompt": "CRI",
+    "wpp": 937
+  },
+  {
+    "prompt": "CRO",
+    "wpp": 1559
+  },
+  {
+    "prompt": "CRY",
+    "wpp": 321
+  },
+  {
+    "prompt": "CUB",
+    "wpp": 128
+  },
+  {
+    "prompt": "CUD",
+    "wpp": 70
+  },
+  {
+    "prompt": "CUE",
+    "wpp": 45
+  },
+  {
+    "prompt": "CUL",
+    "wpp": 1705
+  },
+  {
+    "prompt": "CUN",
+    "wpp": 135
+  },
+  {
+    "prompt": "CUT",
+    "wpp": 436
+  },
+  {
+    "prompt": "CYA",
+    "wpp": 129
+  },
+  {
+    "prompt": "DAB",
+    "wpp": 278
+  },
+  {
+    "prompt": "DAD",
+    "wpp": 73
+  },
+  {
+    "prompt": "DAG",
+    "wpp": 166
+  },
+  {
+    "prompt": "DAL",
+    "wpp": 622
+  },
+  {
+    "prompt": "DAR",
+    "wpp": 459
+  },
+  {
+    "prompt": "DAT",
+    "wpp": 572
+  },
+  {
+    "prompt": "DAW",
+    "wpp": 63
+  },
+  {
+    "prompt": "DAY",
+    "wpp": 159
+  },
+  {
+    "prompt": "DAZ",
+    "wpp": 48
+  },
+  {
+    "prompt": "DDY",
+    "wpp": 76
+  },
+  {
+    "prompt": "DEA",
+    "wpp": 486
+  },
+  {
+    "prompt": "DEB",
+    "wpp": 244
+  },
+  {
+    "prompt": "DEE",
+    "wpp": 202
+  },
+  {
+    "prompt": "DEF",
+    "wpp": 600
+  },
+  {
+    "prompt": "DEI",
+    "wpp": 151
+  },
+  {
+    "prompt": "DEL",
+    "wpp": 654
+  },
+  {
+    "prompt": "DEM",
+    "wpp": 765
+  },
+  {
+    "prompt": "DEP",
+    "wpp": 504
+  },
+  {
+    "prompt": "DER",
+    "wpp": 3592
+  },
+  {
+    "prompt": "DES",
+    "wpp": 2066
+  },
+  {
+    "prompt": "DEV",
+    "wpp": 330
+  },
+  {
+    "prompt": "DEW",
+    "wpp": 130
+  },
+  {
+    "prompt": "DEX",
+    "wpp": 108
+  },
+  {
+    "prompt": "DGE",
+    "wpp": 590
+  },
+  {
+    "prompt": "DIA",
+    "wpp": 1254
+  },
+  {
+    "prompt": "DIB",
+    "wpp": 134
+  },
+  {
+    "prompt": "DID",
+    "wpp": 168
+  },
+  {
+    "prompt": "DIE",
+    "wpp": 821
+  },
+  {
+    "prompt": "DIG",
+    "wpp": 327
+  },
+  {
+    "prompt": "DIM",
+    "wpp": 196
+  },
+  {
+    "prompt": "DIP",
+    "wpp": 271
+  },
+  {
+    "prompt": "DIR",
+    "wpp": 183
+  },
+  {
+    "prompt": "DIT",
+    "wpp": 788
+  },
+  {
+    "prompt": "DIV",
+    "wpp": 402
+  },
+  {
+    "prompt": "DIZ",
+    "wpp": 273
+  },
+  {
+    "prompt": "DNA",
+    "wpp": 31
+  },
+  {
+    "prompt": "DOB",
+    "wpp": 58
+  },
+  {
+    "prompt": "DOC",
+    "wpp": 309
+  },
+  {
+    "prompt": "DOE",
+    "wpp": 101
+  },
+  {
+    "prompt": "DOL",
+    "wpp": 422
+  },
+  {
+    "prompt": "DOM",
+    "wpp": 633
+  },
+  {
+    "prompt": "DON",
+    "wpp": 534
+  },
+  {
+    "prompt": "DOO",
+    "wpp": 243
+  },
+  {
+    "prompt": "DOP",
+    "wpp": 199
+  },
+  {
+    "prompt": "DOR",
+    "wpp": 411
+  },
+  {
+    "prompt": "DOS",
+    "wpp": 324
+  },
+  {
+    "prompt": "DOU",
+    "wpp": 300
+  },
+  {
+    "prompt": "DOV",
+    "wpp": 61
+  },
+  {
+    "prompt": "DOW",
+    "wpp": 479
+  },
+  {
+    "prompt": "DOX",
+    "wpp": 77
+  },
+  {
+    "prompt": "DRE",
+    "wpp": 444
+  },
+  {
+    "prompt": "DRU",
+    "wpp": 203
+  },
+  {
+    "prompt": "DUB",
+    "wpp": 57
+  },
+  {
+    "prompt": "DUC",
+    "wpp": 650
+  },
+  {
+    "prompt": "DUE",
+    "wpp": 88
+  },
+  {
+    "prompt": "DUL",
+    "wpp": 378
+  },
+  {
+    "prompt": "DUO",
+    "wpp": 51
+  },
+  {
+    "prompt": "DUP",
+    "wpp": 103
+  },
+  {
+    "prompt": "DUS",
+    "wpp": 192
+  },
+  {
+    "prompt": "DYE",
+    "wpp": 39
+  },
+  {
+    "prompt": "EAF",
+    "wpp": 130
+  },
+  {
+    "prompt": "EAG",
+    "wpp": 144
+  },
+  {
+    "prompt": "EAK",
+    "wpp": 475
+  },
+  {
+    "prompt": "EAL",
+    "wpp": 888
+  },
+  {
+    "prompt": "EAN",
+    "wpp": 635
+  },
+  {
+    "prompt": "EAP",
+    "wpp": 221
+  },
+  {
+    "prompt": "EAR",
+    "wpp": 1622
+  },
+  {
+    "prompt": "EAS",
+    "wpp": 1068
+  },
+  {
+    "prompt": "EAT",
+    "wpp": 1453
+  },
+  {
+    "prompt": "EAU",
+    "wpp": 194
+  },
+  {
+    "prompt": "EAV",
+    "wpp": 232
+  },
+  {
+    "prompt": "EBB",
+    "wpp": 83
+  },
+  {
+    "prompt": "ECH",
+    "wpp": 806
+  },
+  {
+    "prompt": "ECK",
+    "wpp": 526
+  },
+  {
+    "prompt": "EDG",
+    "wpp": 218
+  },
+  {
+    "prompt": "EDI",
+    "wpp": 1247
+  },
+  {
+    "prompt": "EEF",
+    "wpp": 51
+  },
+  {
+    "prompt": "EEL",
+    "wpp": 427
+  },
+  {
+    "prompt": "EEN",
+    "wpp": 745
+  },
+  {
+    "prompt": "EEP",
+    "wpp": 464
+  },
+  {
+    "prompt": "EER",
+    "wpp": 637
+  },
+  {
+    "prompt": "EES",
+    "wpp": 702
+  },
+  {
+    "prompt": "EFF",
+    "wpp": 257
+  },
+  {
+    "prompt": "EFT",
+    "wpp": 96
+  },
+  {
+    "prompt": "EGO",
+    "wpp": 279
+  },
+  {
+    "prompt": "ELD",
+    "wpp": 368
+  },
+  {
+    "prompt": "ELK",
+    "wpp": 31
+  },
+  {
+    "prompt": "ELL",
+    "wpp": 2644
+  },
+  {
+    "prompt": "ELP",
+    "wpp": 126
+  },
+  {
+    "prompt": "EMB",
+    "wpp": 760
+  },
+  {
+    "prompt": "EME",
+    "wpp": 1608
+  },
+  {
+    "prompt": "EMP",
+    "wpp": 825
+  },
+  {
+    "prompt": "EMS",
+    "wpp": 145
+  },
+  {
+    "prompt": "END",
+    "wpp": 1910
+  },
+  {
+    "prompt": "ENG",
+    "wpp": 471
+  },
+  {
+    "prompt": "ENS",
+    "wpp": 1965
+  },
+  {
+    "prompt": "EPI",
+    "wpp": 955
+  },
+  {
+    "prompt": "ERA",
+    "wpp": 2968
+  },
+  {
+    "prompt": "ERB",
+    "wpp": 857
+  },
+  {
+    "prompt": "ERD",
+    "wpp": 496
+  },
+  {
+    "prompt": "ERE",
+    "wpp": 3337
+  },
+  {
+    "prompt": "ERF",
+    "wpp": 669
+  },
+  {
+    "prompt": "ERG",
+    "wpp": 749
+  },
+  {
+    "prompt": "ERK",
+    "wpp": 192
+  },
+  {
+    "prompt": "ERR",
+    "wpp": 1120
+  },
+  {
+    "prompt": "ERV",
+    "wpp": 737
+  },
+  {
+    "prompt": "ESC",
+    "wpp": 956
+  },
+  {
+    "prompt": "ESS",
+    "wpp": 10634
+  },
+  {
+    "prompt": "EST",
+    "wpp": 5354
+  },
+  {
+    "prompt": "ETH",
+    "wpp": 859
+  },
+  {
+    "prompt": "ETS",
+    "wpp": 1006
+  },
+  {
+    "prompt": "EVA",
+    "wpp": 434
+  },
+  {
+    "prompt": "EVO",
+    "wpp": 284
+  },
+  {
+    "prompt": "EWS",
+    "wpp": 211
+  },
+  {
+    "prompt": "EXI",
+    "wpp": 379
+  },
+  {
+    "prompt": "EXP",
+    "wpp": 629
+  },
+  {
+    "prompt": "EYE",
+    "wpp": 303
+  },
+  {
+    "prompt": "FAB",
+    "wpp": 107
+  },
+  {
+    "prompt": "FAC",
+    "wpp": 508
+  },
+  {
+    "prompt": "FAD",
+    "wpp": 78
+  },
+  {
+    "prompt": "FAI",
+    "wpp": 174
+  },
+  {
+    "prompt": "FAK",
+    "wpp": 22
+  },
+  {
+    "prompt": "FAL",
+    "wpp": 294
+  },
+  {
+    "prompt": "FAS",
+    "wpp": 241
+  },
+  {
+    "prompt": "FAV",
+    "wpp": 81
+  },
+  {
+    "prompt": "FEA",
+    "wpp": 212
+  },
+  {
+    "prompt": "FED",
+    "wpp": 260
+  },
+  {
+    "prompt": "FEM",
+    "wpp": 127
+  },
+  {
+    "prompt": "FEN",
+    "wpp": 225
+  },
+  {
+    "prompt": "FER",
+    "wpp": 1109
+  },
+  {
+    "prompt": "FEU",
+    "wpp": 109
+  },
+  {
+    "prompt": "FFS",
+    "wpp": 233
+  },
+  {
+    "prompt": "FIA",
+    "wpp": 144
+  },
+  {
+    "prompt": "FIB",
+    "wpp": 194
+  },
+  {
+    "prompt": "FID",
+    "wpp": 162
+  },
+  {
+    "prompt": "FIE",
+    "wpp": 999
+  },
+  {
+    "prompt": "FIG",
+    "wpp": 176
+  },
+  {
+    "prompt": "FIL",
+    "wpp": 462
+  },
+  {
+    "prompt": "FIN",
+    "wpp": 862
+  },
+  {
+    "prompt": "FIR",
+    "wpp": 380
+  },
+  {
+    "prompt": "FIS",
+    "wpp": 584
+  },
+  {
+    "prompt": "FIX",
+    "wpp": 127
+  },
+  {
+    "prompt": "FLA",
+    "wpp": 831
+  },
+  {
+    "prompt": "FLE",
+    "wpp": 659
+  },
+  {
+    "prompt": "FLI",
+    "wpp": 408
+  },
+  {
+    "prompt": "FLU",
+    "wpp": 503
+  },
+  {
+    "prompt": "FLY",
+    "wpp": 159
+  },
+  {
+    "prompt": "FOE",
+    "wpp": 38
+  },
+  {
+    "prompt": "FOG",
+    "wpp": 76
+  },
+  {
+    "prompt": "FOI",
+    "wpp": 66
+  },
+  {
+    "prompt": "FOL",
+    "wpp": 355
+  },
+  {
+    "prompt": "FOO",
+    "wpp": 321
+  },
+  {
+    "prompt": "FOR",
+    "wpp": 2109
+  },
+  {
+    "prompt": "FOS",
+    "wpp": 81
+  },
+  {
+    "prompt": "FOU",
+    "wpp": 247
+  },
+  {
+    "prompt": "FOX",
+    "wpp": 55
+  },
+  {
+    "prompt": "FRA",
+    "wpp": 633
+  },
+  {
+    "prompt": "FRO",
+    "wpp": 409
+  },
+  {
+    "prompt": "FRU",
+    "wpp": 184
+  },
+  {
+    "prompt": "FUD",
+    "wpp": 21
+  },
+  {
+    "prompt": "FUE",
+    "wpp": 42
+  },
+  {
+    "prompt": "FUG",
+    "wpp": 104
+  },
+  {
+    "prompt": "FUL",
+    "wpp": 1363
+  },
+  {
+    "prompt": "FUM",
+    "wpp": 93
+  },
+  {
+    "prompt": "FUN",
+    "wpp": 265
+  },
+  {
+    "prompt": "FUR",
+    "wpp": 311
+  },
+  {
+    "prompt": "FUS",
+    "wpp": 341
+  },
+  {
+    "prompt": "FUT",
+    "wpp": 85
+  },
+  {
+    "prompt": "GAG",
+    "wpp": 103
+  },
+  {
+    "prompt": "GAL",
+    "wpp": 760
+  },
+  {
+    "prompt": "GAN",
+    "wpp": 705
+  },
+  {
+    "prompt": "GAP",
+    "wpp": 72
+  },
+  {
+    "prompt": "GAR",
+    "wpp": 687
+  },
+  {
+    "prompt": "GAT",
+    "wpp": 855
+  },
+  {
+    "prompt": "GAV",
+    "wpp": 43
+  },
+  {
+    "prompt": "GAW",
+    "wpp": 49
+  },
+  {
+    "prompt": "GAZ",
+    "wpp": 94
+  },
+  {
+    "prompt": "GEE",
+    "wpp": 133
+  },
+  {
+    "prompt": "GEL",
+    "wpp": 374
+  },
+  {
+    "prompt": "GEM",
+    "wpp": 251
+  },
+  {
+    "prompt": "GEN",
+    "wpp": 2225
+  },
+  {
+    "prompt": "GER",
+    "wpp": 1567
+  },
+  {
+    "prompt": "GES",
+    "wpp": 1273
+  },
+  {
+    "prompt": "GGL",
+    "wpp": 290
+  },
+  {
+    "prompt": "GGY",
+    "wpp": 67
+  },
+  {
+    "prompt": "GHA",
+    "wpp": 118
+  },
+  {
+    "prompt": "GHO",
+    "wpp": 97
+  },
+  {
+    "prompt": "GHT",
+    "wpp": 1361
+  },
+  {
+    "prompt": "GIB",
+    "wpp": 138
+  },
+  {
+    "prompt": "GID",
+    "wpp": 94
+  },
+  {
+    "prompt": "GIG",
+    "wpp": 79
+  },
+  {
+    "prompt": "GIL",
+    "wpp": 264
+  },
+  {
+    "prompt": "GIN",
+    "wpp": 1414
+  },
+  {
+    "prompt": "GIP",
+    "wpp": 32
+  },
+  {
+    "prompt": "GIR",
+    "wpp": 186
+  },
+  {
+    "prompt": "GLE",
+    "wpp": 776
+  },
+  {
+    "prompt": "GLY",
+    "wpp": 1220
+  },
+  {
+    "prompt": "GNO",
+    "wpp": 334
+  },
+  {
+    "prompt": "GOA",
+    "wpp": 90
+  },
+  {
+    "prompt": "GOB",
+    "wpp": 65
+  },
+  {
+    "prompt": "GOD",
+    "wpp": 127
+  },
+  {
+    "prompt": "GOG",
+    "wpp": 170
+  },
+  {
+    "prompt": "GOL",
+    "wpp": 261
+  },
+  {
+    "prompt": "GOO",
+    "wpp": 202
+  },
+  {
+    "prompt": "GOR",
+    "wpp": 321
+  },
+  {
+    "prompt": "GOS",
+    "wpp": 274
+  },
+  {
+    "prompt": "GUA",
+    "wpp": 297
+  },
+  {
+    "prompt": "GUE",
+    "wpp": 448
+  },
+  {
+    "prompt": "GUI",
+    "wpp": 481
+  },
+  {
+    "prompt": "GUL",
+    "wpp": 365
+  },
+  {
+    "prompt": "GUS",
+    "wpp": 165
+  },
+  {
+    "prompt": "GUT",
+    "wpp": 106
+  },
+  {
+    "prompt": "GUY",
+    "wpp": 26
+  },
+  {
+    "prompt": "HAB",
+    "wpp": 410
+  },
+  {
+    "prompt": "HAC",
+    "wpp": 218
+  },
+  {
+    "prompt": "HAD",
+    "wpp": 207
+  },
+  {
+    "prompt": "HAG",
+    "wpp": 398
+  },
+  {
+    "prompt": "HAH",
+    "wpp": 36
+  },
+  {
+    "prompt": "HAI",
+    "wpp": 357
+  },
+  {
+    "prompt": "HAL",
+    "wpp": 1276
+  },
+  {
+    "prompt": "HAM",
+    "wpp": 448
+  },
+  {
+    "prompt": "HAN",
+    "wpp": 1470
+  },
+  {
+    "prompt": "HAP",
+    "wpp": 343
+  },
+  {
+    "prompt": "HAR",
+    "wpp": 1447
+  },
+  {
+    "prompt": "HAT",
+    "wpp": 431
+  },
+  {
+    "prompt": "HAU",
+    "wpp": 291
+  },
+  {
+    "prompt": "HAV",
+    "wpp": 124
+  },
+  {
+    "prompt": "HAY",
+    "wpp": 78
+  },
+  {
+    "prompt": "HAZ",
+    "wpp": 87
+  },
+  {
+    "prompt": "HEC",
+    "wpp": 294
+  },
+  {
+    "prompt": "HEN",
+    "wpp": 851
+  },
+  {
+    "prompt": "HES",
+    "wpp": 1737
+  },
+  {
+    "prompt": "HEW",
+    "wpp": 98
+  },
+  {
+    "prompt": "HID",
+    "wpp": 216
+  },
+  {
+    "prompt": "HIK",
+    "wpp": 60
+  },
+  {
+    "prompt": "HIL",
+    "wpp": 1065
+  },
+  {
+    "prompt": "HIP",
+    "wpp": 1262
+  },
+  {
+    "prompt": "HIR",
+    "wpp": 402
+  },
+  {
+    "prompt": "HIT",
+    "wpp": 446
+  },
+  {
+    "prompt": "HOA",
+    "wpp": 131
+  },
+  {
+    "prompt": "HOG",
+    "wpp": 272
+  },
+  {
+    "prompt": "HOL",
+    "wpp": 1071
+  },
+  {
+    "prompt": "HON",
+    "wpp": 1019
+  },
+  {
+    "prompt": "HOO",
+    "wpp": 753
+  },
+  {
+    "prompt": "HOP",
+    "wpp": 472
+  },
+  {
+    "prompt": "HOS",
+    "wpp": 535
+  },
+  {
+    "prompt": "HOV",
+    "wpp": 86
+  },
+  {
+    "prompt": "HOY",
+    "wpp": 32
+  },
+  {
+    "prompt": "HUB",
+    "wpp": 37
+  },
+  {
+    "prompt": "HUG",
+    "wpp": 62
+  },
+  {
+    "prompt": "HUN",
+    "wpp": 263
+  },
+  {
+    "prompt": "HUP",
+    "wpp": 42
+  },
+  {
+    "prompt": "HUR",
+    "wpp": 317
+  },
+  {
+    "prompt": "HUS",
+    "wpp": 205
+  },
+  {
+    "prompt": "HUT",
+    "wpp": 106
+  },
+  {
+    "prompt": "HYD",
+    "wpp": 582
+  },
+  {
+    "prompt": "HYE",
+    "wpp": 31
+  },
+  {
+    "prompt": "IAR",
+    "wpp": 368
+  },
+  {
+    "prompt": "ICE",
+    "wpp": 944
+  },
+  {
+    "prompt": "ICK",
+    "wpp": 1467
+  },
+  {
+    "prompt": "ICY",
+    "wpp": 89
+  },
+  {
+    "prompt": "IDE",
+    "wpp": 2152
+  },
+  {
+    "prompt": "IDL",
+    "wpp": 149
+  },
+  {
+    "prompt": "IDO",
+    "wpp": 353
+  },
+  {
+    "prompt": "IDS",
+    "wpp": 693
+  },
+  {
+    "prompt": "IED",
+    "wpp": 837
+  },
+  {
+    "prompt": "IEF",
+    "wpp": 121
+  },
+  {
+    "prompt": "IES",
+    "wpp": 9443
+  },
+  {
+    "prompt": "IFF",
+    "wpp": 437
+  },
+  {
+    "prompt": "IFT",
+    "wpp": 325
+  },
+  {
+    "prompt": "IGG",
+    "wpp": 347
+  },
+  {
+    "prompt": "IGH",
+    "wpp": 1338
+  },
+  {
+    "prompt": "IKE",
+    "wpp": 903
+  },
+  {
+    "prompt": "IKI",
+    "wpp": 185
+  },
+  {
+    "prompt": "ILD",
+    "wpp": 311
+  },
+  {
+    "prompt": "ILE",
+    "wpp": 1256
+  },
+  {
+    "prompt": "ILK",
+    "wpp": 105
+  },
+  {
+    "prompt": "ILL",
+    "wpp": 2742
+  },
+  {
+    "prompt": "ILT",
+    "wpp": 250
+  },
+  {
+    "prompt": "IMB",
+    "wpp": 401
+  },
+  {
+    "prompt": "IMP",
+    "wpp": 1306
+  },
+  {
+    "prompt": "IMS",
+    "wpp": 183
+  },
+  {
+    "prompt": "INC",
+    "wpp": 1377
+  },
+  {
+    "prompt": "IND",
+    "wpp": 1513
+  },
+  {
+    "prompt": "INE",
+    "wpp": 5971
+  },
+  {
+    "prompt": "INF",
+    "wpp": 767
+  },
+  {
+    "prompt": "ING",
+    "wpp": 24579
+  },
+  {
+    "prompt": "INJ",
+    "wpp": 95
+  },
+  {
+    "prompt": "INT",
+    "wpp": 3060
+  },
+  {
+    "prompt": "INV",
+    "wpp": 422
+  },
+  {
+    "prompt": "INY",
+    "wpp": 86
+  },
+  {
+    "prompt": "ION",
+    "wpp": 10745
+  },
+  {
+    "prompt": "IOT",
+    "wpp": 358
+  },
+  {
+    "prompt": "IPS",
+    "wpp": 716
+  },
+  {
+    "prompt": "IRE",
+    "wpp": 982
+  },
+  {
+    "prompt": "IRM",
+    "wpp": 163
+  },
+  {
+    "prompt": "IRO",
+    "wpp": 344
+  },
+  {
+    "prompt": "IRT",
+    "wpp": 311
+  },
+  {
+    "prompt": "ISH",
+    "wpp": 2527
+  },
+  {
+    "prompt": "ISK",
+    "wpp": 185
+  },
+  {
+    "prompt": "ISL",
+    "wpp": 232
+  },
+  {
+    "prompt": "ISO",
+    "wpp": 858
+  },
+  {
+    "prompt": "ISS",
+    "wpp": 1109
+  },
+  {
+    "prompt": "IST",
+    "wpp": 6576
+  },
+  {
+    "prompt": "ITA",
+    "wpp": 1632
+  },
+  {
+    "prompt": "ITE",
+    "wpp": 2755
+  },
+  {
+    "prompt": "ITH",
+    "wpp": 954
+  },
+  {
+    "prompt": "ITS",
+    "wpp": 490
+  },
+  {
+    "prompt": "IVE",
+    "wpp": 3288
+  },
+  {
+    "prompt": "IWI",
+    "wpp": 26
+  },
+  {
+    "prompt": "JAC",
+    "wpp": 263
+  },
+  {
+    "prompt": "JAG",
+    "wpp": 48
+  },
+  {
+    "prompt": "JAI",
+    "wpp": 22
+  },
+  {
+    "prompt": "JAM",
+    "wpp": 128
+  },
+  {
+    "prompt": "JAN",
+    "wpp": 79
+  },
+  {
+    "prompt": "JAS",
+    "wpp": 61
+  },
+  {
+    "prompt": "JAZ",
+    "wpp": 21
+  },
+  {
+    "prompt": "JEA",
+    "wpp": 32
+  },
+  {
+    "prompt": "JEE",
+    "wpp": 48
+  },
+  {
+    "prompt": "JEL",
+    "wpp": 45
+  },
+  {
+    "prompt": "JET",
+    "wpp": 92
+  },
+  {
+    "prompt": "JIB",
+    "wpp": 25
+  },
+  {
+    "prompt": "JIG",
+    "wpp": 66
+  },
+  {
+    "prompt": "JIT",
+    "wpp": 25
+  },
+  {
+    "prompt": "JOB",
+    "wpp": 53
+  },
+  {
+    "prompt": "JOC",
+    "wpp": 51
+  },
+  {
+    "prompt": "JOG",
+    "wpp": 24
+  },
+  {
+    "prompt": "JOI",
+    "wpp": 142
+  },
+  {
+    "prompt": "JOR",
+    "wpp": 56
+  },
+  {
+    "prompt": "JOY",
+    "wpp": 66
+  },
+  {
+    "prompt": "JUG",
+    "wpp": 98
+  },
+  {
+    "prompt": "JUI",
+    "wpp": 25
+  },
+  {
+    "prompt": "JUM",
+    "wpp": 88
+  },
+  {
+    "prompt": "JUN",
+    "wpp": 153
+  },
+  {
+    "prompt": "JUT",
+    "wpp": 42
+  },
+  {
+    "prompt": "KAB",
+    "wpp": 195
+  },
+  {
+    "prompt": "KAI",
+    "wpp": 76
+  },
+  {
+    "prompt": "KAK",
+    "wpp": 27
+  },
+  {
+    "prompt": "KAT",
+    "wpp": 148
+  },
+  {
+    "prompt": "KAW",
+    "wpp": 29
+  },
+  {
+    "prompt": "KAY",
+    "wpp": 30
+  },
+  {
+    "prompt": "KED",
+    "wpp": 912
+  },
+  {
+    "prompt": "KEE",
+    "wpp": 246
+  },
+  {
+    "prompt": "KEL",
+    "wpp": 235
+  },
+  {
+    "prompt": "KEN",
+    "wpp": 427
+  },
+  {
+    "prompt": "KEP",
+    "wpp": 57
+  },
+  {
+    "prompt": "KER",
+    "wpp": 1579
+  },
+  {
+    "prompt": "KET",
+    "wpp": 499
+  },
+  {
+    "prompt": "KIC",
+    "wpp": 75
+  },
+  {
+    "prompt": "KID",
+    "wpp": 119
+  },
+  {
+    "prompt": "KIF",
+    "wpp": 32
+  },
+  {
+    "prompt": "KIN",
+    "wpp": 2129
+  },
+  {
+    "prompt": "KIT",
+    "wpp": 180
+  },
+  {
+    "prompt": "KNE",
+    "wpp": 153
+  },
+  {
+    "prompt": "KNI",
+    "wpp": 115
+  },
+  {
+    "prompt": "KOI",
+    "wpp": 38
+  },
+  {
+    "prompt": "LAB",
+    "wpp": 729
+  },
+  {
+    "prompt": "LAC",
+    "wpp": 961
+  },
+  {
+    "prompt": "LAH",
+    "wpp": 83
+  },
+  {
+    "prompt": "LAI",
+    "wpp": 455
+  },
+  {
+    "prompt": "LAK",
+    "wpp": 115
+  },
+  {
+    "prompt": "LAN",
+    "wpp": 2049
+  },
+  {
+    "prompt": "LAP",
+    "wpp": 346
+  },
+  {
+    "prompt": "LAR",
+    "wpp": 1762
+  },
+  {
+    "prompt": "LAS",
+    "wpp": 1792
+  },
+  {
+    "prompt": "LAT",
+    "wpp": 3543
+  },
+  {
+    "prompt": "LAV",
+    "wpp": 304
+  },
+  {
+    "prompt": "LAX",
+    "wpp": 109
+  },
+  {
+    "prompt": "LDS",
+    "wpp": 274
+  },
+  {
+    "prompt": "LEA",
+    "wpp": 1094
+  },
+  {
+    "prompt": "LEC",
+    "wpp": 988
+  },
+  {
+    "prompt": "LED",
+    "wpp": 2241
+  },
+  {
+    "prompt": "LEF",
+    "wpp": 161
+  },
+  {
+    "prompt": "LEO",
+    "wpp": 268
+  },
+  {
+    "prompt": "LES",
+    "wpp": 4511
+  },
+  {
+    "prompt": "LET",
+    "wpp": 1215
+  },
+  {
+    "prompt": "LEW",
+    "wpp": 156
+  },
+  {
+    "prompt": "LEX",
+    "wpp": 345
+  },
+  {
+    "prompt": "LEY",
+    "wpp": 199
+  },
+  {
+    "prompt": "LIB",
+    "wpp": 386
+  },
+  {
+    "prompt": "LIF",
+    "wpp": 526
+  },
+  {
+    "prompt": "LIM",
+    "wpp": 694
+  },
+  {
+    "prompt": "LIN",
+    "wpp": 5147
+  },
+  {
+    "prompt": "LIP",
+    "wpp": 487
+  },
+  {
+    "prompt": "LIT",
+    "wpp": 3538
+  },
+  {
+    "prompt": "LLS",
+    "wpp": 663
+  },
+  {
+    "prompt": "LLY",
+    "wpp": 2484
+  },
+  {
+    "prompt": "LOA",
+    "wpp": 326
+  },
+  {
+    "prompt": "LOB",
+    "wpp": 355
+  },
+  {
+    "prompt": "LOC",
+    "wpp": 894
+  },
+  {
+    "prompt": "LOD",
+    "wpp": 242
+  },
+  {
+    "prompt": "LOG",
+    "wpp": 3132
+  },
+  {
+    "prompt": "LOL",
+    "wpp": 133
+  },
+  {
+    "prompt": "LOP",
+    "wpp": 621
+  },
+  {
+    "prompt": "LOR",
+    "wpp": 951
+  },
+  {
+    "prompt": "LOT",
+    "wpp": 679
+  },
+  {
+    "prompt": "LOU",
+    "wpp": 909
+  },
+  {
+    "prompt": "LOX",
+    "wpp": 43
+  },
+  {
+    "prompt": "LTS",
+    "wpp": 154
+  },
+  {
+    "prompt": "LUC",
+    "wpp": 291
+  },
+  {
+    "prompt": "LUE",
+    "wpp": 313
+  },
+  {
+    "prompt": "LUG",
+    "wpp": 128
+  },
+  {
+    "prompt": "LUK",
+    "wpp": 35
+  },
+  {
+    "prompt": "LUM",
+    "wpp": 797
+  },
+  {
+    "prompt": "LUN",
+    "wpp": 314
+  },
+  {
+    "prompt": "LUS",
+    "wpp": 663
+  },
+  {
+    "prompt": "LUT",
+    "wpp": 583
+  },
+  {
+    "prompt": "LUX",
+    "wpp": 95
+  },
+  {
+    "prompt": "LYI",
+    "wpp": 111
+  },
+  {
+    "prompt": "LYR",
+    "wpp": 56
+  },
+  {
+    "prompt": "MAD",
+    "wpp": 240
+  },
+  {
+    "prompt": "MAE",
+    "wpp": 60
+  },
+  {
+    "prompt": "MAG",
+    "wpp": 536
+  },
+  {
+    "prompt": "MAI",
+    "wpp": 362
+  },
+  {
+    "prompt": "MAK",
+    "wpp": 307
+  },
+  {
+    "prompt": "MAL",
+    "wpp": 1041
+  },
+  {
+    "prompt": "MAN",
+    "wpp": 2580
+  },
+  {
+    "prompt": "MAR",
+    "wpp": 1287
+  },
+  {
+    "prompt": "MAT",
+    "wpp": 2868
+  },
+  {
+    "prompt": "MAW",
+    "wpp": 34
+  },
+  {
+    "prompt": "MBS",
+    "wpp": 94
+  },
+  {
+    "prompt": "MED",
+    "wpp": 988
+  },
+  {
+    "prompt": "MEE",
+    "wpp": 103
+  },
+  {
+    "prompt": "MEG",
+    "wpp": 201
+  },
+  {
+    "prompt": "MEM",
+    "wpp": 172
+  },
+  {
+    "prompt": "MEN",
+    "wpp": 3964
+  },
+  {
+    "prompt": "MEO",
+    "wpp": 81
+  },
+  {
+    "prompt": "MER",
+    "wpp": 1743
+  },
+  {
+    "prompt": "MES",
+    "wpp": 1087
+  },
+  {
+    "prompt": "MEW",
+    "wpp": 78
+  },
+  {
+    "prompt": "MIA",
+    "wpp": 485
+  },
+  {
+    "prompt": "MID",
+    "wpp": 458
+  },
+  {
+    "prompt": "MIG",
+    "wpp": 167
+  },
+  {
+    "prompt": "MIM",
+    "wpp": 110
+  },
+  {
+    "prompt": "MIR",
+    "wpp": 208
+  },
+  {
+    "prompt": "MIT",
+    "wpp": 923
+  },
+  {
+    "prompt": "MMY",
+    "wpp": 61
+  },
+  {
+    "prompt": "MOA",
+    "wpp": 32
+  },
+  {
+    "prompt": "MOC",
+    "wpp": 232
+  },
+  {
+    "prompt": "MOD",
+    "wpp": 384
+  },
+  {
+    "prompt": "MOG",
+    "wpp": 299
+  },
+  {
+    "prompt": "MOI",
+    "wpp": 181
+  },
+  {
+    "prompt": "MOK",
+    "wpp": 96
+  },
+  {
+    "prompt": "MOM",
+    "wpp": 134
+  },
+  {
+    "prompt": "MON",
+    "wpp": 1955
+  },
+  {
+    "prompt": "MOO",
+    "wpp": 331
+  },
+  {
+    "prompt": "MOT",
+    "wpp": 608
+  },
+  {
+    "prompt": "MOU",
+    "wpp": 722
+  },
+  {
+    "prompt": "MOW",
+    "wpp": 33
+  },
+  {
+    "prompt": "MOY",
+    "wpp": 34
+  },
+  {
+    "prompt": "MPT",
+    "wpp": 293
+  },
+  {
+    "prompt": "MUD",
+    "wpp": 152
+  },
+  {
+    "prompt": "MUN",
+    "wpp": 408
+  },
+  {
+    "prompt": "MUR",
+    "wpp": 246
+  },
+  {
+    "prompt": "MUZ",
+    "wpp": 30
+  },
+  {
+    "prompt": "NAB",
+    "wpp": 502
+  },
+  {
+    "prompt": "NAH",
+    "wpp": 36
+  },
+  {
+    "prompt": "NAI",
+    "wpp": 200
+  },
+  {
+    "prompt": "NAK",
+    "wpp": 104
+  },
+  {
+    "prompt": "NAL",
+    "wpp": 2179
+  },
+  {
+    "prompt": "NAN",
+    "wpp": 631
+  },
+  {
+    "prompt": "NAP",
+    "wpp": 384
+  },
+  {
+    "prompt": "NAW",
+    "wpp": 51
+  },
+  {
+    "prompt": "NAY",
+    "wpp": 34
+  },
+  {
+    "prompt": "NAZ",
+    "wpp": 58
+  },
+  {
+    "prompt": "NCH",
+    "wpp": 1366
+  },
+  {
+    "prompt": "NCY",
+    "wpp": 515
+  },
+  {
+    "prompt": "NEA",
+    "wpp": 417
+  },
+  {
+    "prompt": "NEB",
+    "wpp": 140
+  },
+  {
+    "prompt": "NEG",
+    "wpp": 232
+  },
+  {
+    "prompt": "NEO",
+    "wpp": 293
+  },
+  {
+    "prompt": "NER",
+    "wpp": 1916
+  },
+  {
+    "prompt": "NEV",
+    "wpp": 59
+  },
+  {
+    "prompt": "NEW",
+    "wpp": 224
+  },
+  {
+    "prompt": "NEX",
+    "wpp": 212
+  },
+  {
+    "prompt": "NGL",
+    "wpp": 1599
+  },
+  {
+    "prompt": "NIE",
+    "wpp": 770
+  },
+  {
+    "prompt": "NIF",
+    "wpp": 462
+  },
+  {
+    "prompt": "NIN",
+    "wpp": 2074
+  },
+  {
+    "prompt": "NIT",
+    "wpp": 1458
+  },
+  {
+    "prompt": "NIX",
+    "wpp": 26
+  },
+  {
+    "prompt": "NJA",
+    "wpp": 58
+  },
+  {
+    "prompt": "NOB",
+    "wpp": 245
+  },
+  {
+    "prompt": "NOG",
+    "wpp": 400
+  },
+  {
+    "prompt": "NOI",
+    "wpp": 290
+  },
+  {
+    "prompt": "NOM",
+    "wpp": 848
+  },
+  {
+    "prompt": "NON",
+    "wpp": 1807
+  },
+  {
+    "prompt": "NOP",
+    "wpp": 454
+  },
+  {
+    "prompt": "NOR",
+    "wpp": 597
+  },
+  {
+    "prompt": "NOS",
+    "wpp": 776
+  },
+  {
+    "prompt": "NOV",
+    "wpp": 171
+  },
+  {
+    "prompt": "NOW",
+    "wpp": 275
+  },
+  {
+    "prompt": "NOX",
+    "wpp": 44
+  },
+  {
+    "prompt": "NOY",
+    "wpp": 34
+  },
+  {
+    "prompt": "NUD",
+    "wpp": 63
+  },
+  {
+    "prompt": "NUK",
+    "wpp": 22
+  },
+  {
+    "prompt": "NUN",
+    "wpp": 133
+  },
+  {
+    "prompt": "NUR",
+    "wpp": 221
+  },
+  {
+    "prompt": "OAL",
+    "wpp": 168
+  },
+  {
+    "prompt": "OAN",
+    "wpp": 185
+  },
+  {
+    "prompt": "OAP",
+    "wpp": 56
+  },
+  {
+    "prompt": "OAR",
+    "wpp": 531
+  },
+  {
+    "prompt": "OAS",
+    "wpp": 150
+  },
+  {
+    "prompt": "OBA",
+    "wpp": 336
+  },
+  {
+    "prompt": "OBE",
+    "wpp": 328
+  },
+  {
+    "prompt": "OBJ",
+    "wpp": 81
+  },
+  {
+    "prompt": "OBO",
+    "wpp": 266
+  },
+  {
+    "prompt": "OBS",
+    "wpp": 309
+  },
+  {
+    "prompt": "OCE",
+    "wpp": 452
+  },
+  {
+    "prompt": "OCH",
+    "wpp": 802
+  },
+  {
+    "prompt": "OCK",
+    "wpp": 1447
+  },
+  {
+    "prompt": "ODD",
+    "wpp": 222
+  },
+  {
+    "prompt": "ODE",
+    "wpp": 791
+  },
+  {
+    "prompt": "ODS",
+    "wpp": 485
+  },
+  {
+    "prompt": "OES",
+    "wpp": 388
+  },
+  {
+    "prompt": "OFT",
+    "wpp": 139
+  },
+  {
+    "prompt": "OGS",
+    "wpp": 148
+  },
+  {
+    "prompt": "OID",
+    "wpp": 1128
+  },
+  {
+    "prompt": "OIL",
+    "wpp": 396
+  },
+  {
+    "prompt": "OIS",
+    "wpp": 469
+  },
+  {
+    "prompt": "OLF",
+    "wpp": 101
+  },
+  {
+    "prompt": "OLK",
+    "wpp": 110
+  },
+  {
+    "prompt": "OLL",
+    "wpp": 1282
+  },
+  {
+    "prompt": "OLO",
+    "wpp": 3169
+  },
+  {
+    "prompt": "OLT",
+    "wpp": 193
+  },
+  {
+    "prompt": "OLY",
+    "wpp": 909
+  },
+  {
+    "prompt": "OME",
+    "wpp": 2487
+  },
+  {
+    "prompt": "OMS",
+    "wpp": 351
+  },
+  {
+    "prompt": "OND",
+    "wpp": 960
+  },
+  {
+    "prompt": "ONE",
+    "wpp": 2591
+  },
+  {
+    "prompt": "ONL",
+    "wpp": 175
+  },
+  {
+    "prompt": "ONT",
+    "wpp": 1543
+  },
+  {
+    "prompt": "ONY",
+    "wpp": 392
+  },
+  {
+    "prompt": "OOF",
+    "wpp": 280
+  },
+  {
+    "prompt": "OOK",
+    "wpp": 593
+  },
+  {
+    "prompt": "OOL",
+    "wpp": 577
+  },
+  {
+    "prompt": "OOM",
+    "wpp": 450
+  },
+  {
+    "prompt": "OON",
+    "wpp": 590
+  },
+  {
+    "prompt": "OOP",
+    "wpp": 346
+  },
+  {
+    "prompt": "OOR",
+    "wpp": 298
+  },
+  {
+    "prompt": "OPI",
+    "wpp": 1009
+  },
+  {
+    "prompt": "OPP",
+    "wpp": 521
+  },
+  {
+    "prompt": "OPS",
+    "wpp": 493
+  },
+  {
+    "prompt": "OPT",
+    "wpp": 365
+  },
+  {
+    "prompt": "ORA",
+    "wpp": 1402
+  },
+  {
+    "prompt": "ORC",
+    "wpp": 407
+  },
+  {
+    "prompt": "ORE",
+    "wpp": 1906
+  },
+  {
+    "prompt": "ORG",
+    "wpp": 389
+  },
+  {
+    "prompt": "ORI",
+    "wpp": 2648
+  },
+  {
+    "prompt": "ORM",
+    "wpp": 1266
+  },
+  {
+    "prompt": "ORN",
+    "wpp": 791
+  },
+  {
+    "prompt": "ORS",
+    "wpp": 1976
+  },
+  {
+    "prompt": "ORT",
+    "wpp": 1959
+  },
+  {
+    "prompt": "ORY",
+    "wpp": 694
+  },
+  {
+    "prompt": "OSH",
+    "wpp": 232
+  },
+  {
+    "prompt": "OSS",
+    "wpp": 775
+  },
+  {
+    "prompt": "OST",
+    "wpp": 1783
+  },
+  {
+    "prompt": "OTE",
+    "wpp": 1039
+  },
+  {
+    "prompt": "OTH",
+    "wpp": 1083
+  },
+  {
+    "prompt": "OTO",
+    "wpp": 1291
+  },
+  {
+    "prompt": "OTS",
+    "wpp": 486
+  },
+  {
+    "prompt": "OUC",
+    "wpp": 278
+  },
+  {
+    "prompt": "OUD",
+    "wpp": 157
+  },
+  {
+    "prompt": "OUP",
+    "wpp": 248
+  },
+  {
+    "prompt": "OUS",
+    "wpp": 4793
+  },
+  {
+    "prompt": "OVA",
+    "wpp": 243
+  },
+  {
+    "prompt": "OVE",
+    "wpp": 3252
+  },
+  {
+    "prompt": "OWE",
+    "wpp": 728
+  },
+  {
+    "prompt": "OWL",
+    "wpp": 311
+  },
+  {
+    "prompt": "OXO",
+    "wpp": 49
+  },
+  {
+    "prompt": "OXY",
+    "wpp": 235
+  },
+  {
+    "prompt": "OZE",
+    "wpp": 132
+  },
+  {
+    "prompt": "OZO",
+    "wpp": 161
+  },
+  {
+    "prompt": "PAC",
+    "wpp": 518
+  },
+  {
+    "prompt": "PAD",
+    "wpp": 224
+  },
+  {
+    "prompt": "PAG",
+    "wpp": 264
+  },
+  {
+    "prompt": "PAI",
+    "wpp": 265
+  },
+  {
+    "prompt": "PAL",
+    "wpp": 782
+  },
+  {
+    "prompt": "PAM",
+    "wpp": 73
+  },
+  {
+    "prompt": "PAP",
+    "wpp": 252
+  },
+  {
+    "prompt": "PAR",
+    "wpp": 2266
+  },
+  {
+    "prompt": "PAS",
+    "wpp": 610
+  },
+  {
+    "prompt": "PAT",
+    "wpp": 1169
+  },
+  {
+    "prompt": "PEB",
+    "wpp": 26
+  },
+  {
+    "prompt": "PEC",
+    "wpp": 649
+  },
+  {
+    "prompt": "PEG",
+    "wpp": 70
+  },
+  {
+    "prompt": "PEL",
+    "wpp": 576
+  },
+  {
+    "prompt": "PEO",
+    "wpp": 76
+  },
+  {
+    "prompt": "PEP",
+    "wpp": 188
+  },
+  {
+    "prompt": "PER",
+    "wpp": 4914
+  },
+  {
+    "prompt": "PES",
+    "wpp": 631
+  },
+  {
+    "prompt": "PEW",
+    "wpp": 55
+  },
+  {
+    "prompt": "PHA",
+    "wpp": 1254
+  },
+  {
+    "prompt": "PIA",
+    "wpp": 255
+  },
+  {
+    "prompt": "PIN",
+    "wpp": 1760
+  },
+  {
+    "prompt": "PIR",
+    "wpp": 493
+  },
+  {
+    "prompt": "PIX",
+    "wpp": 22
+  },
+  {
+    "prompt": "PIZ",
+    "wpp": 59
+  },
+  {
+    "prompt": "PLA",
+    "wpp": 1820
+  },
+  {
+    "prompt": "PLE",
+    "wpp": 1343
+  },
+  {
+    "prompt": "PLO",
+    "wpp": 652
+  },
+  {
+    "prompt": "PLY",
+    "wpp": 78
+  },
+  {
+    "prompt": "POC",
+    "wpp": 197
+  },
+  {
+    "prompt": "POD",
+    "wpp": 427
+  },
+  {
+    "prompt": "POK",
+    "wpp": 90
+  },
+  {
+    "prompt": "POM",
+    "wpp": 166
+  },
+  {
+    "prompt": "POR",
+    "wpp": 1323
+  },
+  {
+    "prompt": "POV",
+    "wpp": 34
+  },
+  {
+    "prompt": "POX",
+    "wpp": 55
+  },
+  {
+    "prompt": "PRA",
+    "wpp": 602
+  },
+  {
+    "prompt": "PRE",
+    "wpp": 3264
+  },
+  {
+    "prompt": "PRO",
+    "wpp": 3251
+  },
+  {
+    "prompt": "PRY",
+    "wpp": 32
+  },
+  {
+    "prompt": "PSI",
+    "wpp": 351
+  },
+  {
+    "prompt": "PSY",
+    "wpp": 308
+  },
+  {
+    "prompt": "PUB",
+    "wpp": 111
+  },
+  {
+    "prompt": "PUF",
+    "wpp": 34
+  },
+  {
+    "prompt": "PUG",
+    "wpp": 99
+  },
+  {
+    "prompt": "PUK",
+    "wpp": 25
+  },
+  {
+    "prompt": "PUM",
+    "wpp": 89
+  },
+  {
+    "prompt": "PUN",
+    "wpp": 322
+  },
+  {
+    "prompt": "PUR",
+    "wpp": 483
+  },
+  {
+    "prompt": "PUT",
+    "wpp": 350
+  },
+  {
+    "prompt": "PUZ",
+    "wpp": 23
+  },
+  {
+    "prompt": "PYR",
+    "wpp": 400
+  },
+  {
+    "prompt": "QUA",
+    "wpp": 1216
+  },
+  {
+    "prompt": "QUE",
+    "wpp": 1123
+  },
+  {
+    "prompt": "QUI",
+    "wpp": 1482
+  },
+  {
+    "prompt": "QUO",
+    "wpp": 156
+  },
+  {
+    "prompt": "RAB",
+    "wpp": 1018
+  },
+  {
+    "prompt": "RAG",
+    "wpp": 917
+  },
+  {
+    "prompt": "RAI",
+    "wpp": 1073
+  },
+  {
+    "prompt": "RAL",
+    "wpp": 1779
+  },
+  {
+    "prompt": "RAM",
+    "wpp": 1477
+  },
+  {
+    "prompt": "RAN",
+    "wpp": 3002
+  },
+  {
+    "prompt": "RAR",
+    "wpp": 357
+  },
+  {
+    "prompt": "RAS",
+    "wpp": 1324
+  },
+  {
+    "prompt": "RAV",
+    "wpp": 537
+  },
+  {
+    "prompt": "RAW",
+    "wpp": 350
+  },
+  {
+    "prompt": "RAY",
+    "wpp": 319
+  },
+  {
+    "prompt": "RAZ",
+    "wpp": 171
+  },
+  {
+    "prompt": "REB",
+    "wpp": 496
+  },
+  {
+    "prompt": "REC",
+    "wpp": 2098
+  },
+  {
+    "prompt": "REE",
+    "wpp": 1494
+  },
+  {
+    "prompt": "REG",
+    "wpp": 744
+  },
+  {
+    "prompt": "REI",
+    "wpp": 614
+  },
+  {
+    "prompt": "REJ",
+    "wpp": 149
+  },
+  {
+    "prompt": "REM",
+    "wpp": 1146
+  },
+  {
+    "prompt": "REN",
+    "wpp": 1396
+  },
+  {
+    "prompt": "REP",
+    "wpp": 1393
+  },
+  {
+    "prompt": "REV",
+    "wpp": 702
+  },
+  {
+    "prompt": "REX",
+    "wpp": 128
+  },
+  {
+    "prompt": "RCH",
+    "wpp": 1047
+  },
+  {
+    "prompt": "RIB",
+    "wpp": 557
+  },
+  {
+    "prompt": "RIF",
+    "wpp": 669
+  },
+  {
+    "prompt": "RIG",
+    "wpp": 672
+  },
+  {
+    "prompt": "RIM",
+    "wpp": 798
+  },
+  {
+    "prompt": "RIP",
+    "wpp": 676
+  },
+  {
+    "prompt": "RIS",
+    "wpp": 3191
+  },
+  {
+    "prompt": "RIT",
+    "wpp": 1745
+  },
+  {
+    "prompt": "RIV",
+    "wpp": 531
+  },
+  {
+    "prompt": "RMS",
+    "wpp": 253
+  },
+  {
+    "prompt": "ROB",
+    "wpp": 561
+  },
+  {
+    "prompt": "ROI",
+    "wpp": 448
+  },
+  {
+    "prompt": "ROL",
+    "wpp": 1061
+  },
+  {
+    "prompt": "RON",
+    "wpp": 1790
+  },
+  {
+    "prompt": "ROP",
+    "wpp": 2119
+  },
+  {
+    "prompt": "ROS",
+    "wpp": 1726
+  },
+  {
+    "prompt": "ROV",
+    "wpp": 458
+  },
+  {
+    "prompt": "RRO",
+    "wpp": 522
+  },
+  {
+    "prompt": "RSE",
+    "wpp": 870
+  },
+  {
+    "prompt": "RUE",
+    "wpp": 128
+  },
+  {
+    "prompt": "RUG",
+    "wpp": 156
+  },
+  {
+    "prompt": "RUL",
+    "wpp": 207
+  },
+  {
+    "prompt": "RUM",
+    "wpp": 620
+  },
+  {
+    "prompt": "RUN",
+    "wpp": 372
+  },
+  {
+    "prompt": "RUS",
+    "wpp": 847
+  },
+  {
+    "prompt": "RYE",
+    "wpp": 52
+  },
+  {
+    "prompt": "SAB",
+    "wpp": 423
+  },
+  {
+    "prompt": "SAG",
+    "wpp": 227
+  },
+  {
+    "prompt": "SAI",
+    "wpp": 298
+  },
+  {
+    "prompt": "SAL",
+    "wpp": 997
+  },
+  {
+    "prompt": "SAM",
+    "wpp": 216
+  },
+  {
+    "prompt": "SAN",
+    "wpp": 797
+  },
+  {
+    "prompt": "SAP",
+    "wpp": 230
+  },
+  {
+    "prompt": "SAR",
+    "wpp": 510
+  },
+  {
+    "prompt": "SAT",
+    "wpp": 1479
+  },
+  {
+    "prompt": "SAU",
+    "wpp": 265
+  },
+  {
+    "prompt": "SAV",
+    "wpp": 178
+  },
+  {
+    "prompt": "SAW",
+    "wpp": 121
+  },
+  {
+    "prompt": "SCH",
+    "wpp": 802
+  },
+  {
+    "prompt": "SCI",
+    "wpp": 627
+  },
+  {
+    "prompt": "SCO",
+    "wpp": 1463
+  },
+  {
+    "prompt": "SCR",
+    "wpp": 1106
+  },
+  {
+    "prompt": "SCU",
+    "wpp": 577
+  },
+  {
+    "prompt": "SEE",
+    "wpp": 347
+  },
+  {
+    "prompt": "SEG",
+    "wpp": 101
+  },
+  {
+    "prompt": "SEL",
+    "wpp": 794
+  },
+  {
+    "prompt": "SEM",
+    "wpp": 820
+  },
+  {
+    "prompt": "SEP",
+    "wpp": 309
+  },
+  {
+    "prompt": "SER",
+    "wpp": 2063
+  },
+  {
+    "prompt": "SES",
+    "wpp": 8292
+  },
+  {
+    "prompt": "SEV",
+    "wpp": 103
+  },
+  {
+    "prompt": "SEW",
+    "wpp": 144
+  },
+  {
+    "prompt": "SHA",
+    "wpp": 1093
+  },
+  {
+    "prompt": "SHO",
+    "wpp": 960
+  },
+  {
+    "prompt": "SHU",
+    "wpp": 172
+  },
+  {
+    "prompt": "SIC",
+    "wpp": 542
+  },
+  {
+    "prompt": "SIL",
+    "wpp": 586
+  },
+  {
+    "prompt": "SIM",
+    "wpp": 431
+  },
+  {
+    "prompt": "SIP",
+    "wpp": 134
+  },
+  {
+    "prompt": "SIS",
+    "wpp": 1242
+  },
+  {
+    "prompt": "SKA",
+    "wpp": 125
+  },
+  {
+    "prompt": "SKE",
+    "wpp": 397
+  },
+  {
+    "prompt": "SKI",
+    "wpp": 611
+  },
+  {
+    "prompt": "SKU",
+    "wpp": 66
+  },
+  {
+    "prompt": "SLA",
+    "wpp": 447
+  },
+  {
+    "prompt": "SLO",
+    "wpp": 294
+  },
+  {
+    "prompt": "SLY",
+    "wpp": 760
+  },
+  {
+    "prompt": "SMI",
+    "wpp": 382
+  },
+  {
+    "prompt": "SMO",
+    "wpp": 490
+  },
+  {
+    "prompt": "SMS",
+    "wpp": 1631
+  },
+  {
+    "prompt": "SMU",
+    "wpp": 128
+  },
+  {
+    "prompt": "SNA",
+    "wpp": 282
+  },
+  {
+    "prompt": "SNE",
+    "wpp": 1127
+  },
+  {
+    "prompt": "SNI",
+    "wpp": 176
+  },
+  {
+    "prompt": "SNO",
+    "wpp": 310
+  },
+  {
+    "prompt": "SNU",
+    "wpp": 84
+  },
+  {
+    "prompt": "SOA",
+    "wpp": 108
+  },
+  {
+    "prompt": "SOB",
+    "wpp": 108
+  },
+  {
+    "prompt": "SOC",
+    "wpp": 409
+  },
+  {
+    "prompt": "SOF",
+    "wpp": 80
+  },
+  {
+    "prompt": "SOG",
+    "wpp": 142
+  },
+  {
+    "prompt": "SOO",
+    "wpp": 121
+  },
+  {
+    "prompt": "SOS",
+    "wpp": 115
+  },
+  {
+    "prompt": "SOW",
+    "wpp": 105
+  },
+  {
+    "prompt": "SPA",
+    "wpp": 851
+  },
+  {
+    "prompt": "SPI",
+    "wpp": 1084
+  },
+  {
+    "prompt": "SPL",
+    "wpp": 346
+  },
+  {
+    "prompt": "SPR",
+    "wpp": 503
+  },
+  {
+    "prompt": "SQU",
+    "wpp": 675
+  },
+  {
+    "prompt": "STE",
+    "wpp": 3696
+  },
+  {
+    "prompt": "STI",
+    "wpp": 3692
+  },
+  {
+    "prompt": "STR",
+    "wpp": 3238
+  },
+  {
+    "prompt": "STU",
+    "wpp": 583
+  },
+  {
+    "prompt": "STY",
+    "wpp": 351
+  },
+  {
+    "prompt": "SUD",
+    "wpp": 66
+  },
+  {
+    "prompt": "SUE",
+    "wpp": 82
+  },
+  {
+    "prompt": "SUF",
+    "wpp": 123
+  },
+  {
+    "prompt": "SUR",
+    "wpp": 1003
+  },
+  {
+    "prompt": "SUS",
+    "wpp": 278
+  },
+  {
+    "prompt": "SWA",
+    "wpp": 354
+  },
+  {
+    "prompt": "SWI",
+    "wpp": 297
+  },
+  {
+    "prompt": "SWO",
+    "wpp": 255
+  },
+  {
+    "prompt": "TAB",
+    "wpp": 1253
+  },
+  {
+    "prompt": "TAC",
+    "wpp": 614
+  },
+  {
+    "prompt": "TAD",
+    "wpp": 130
+  },
+  {
+    "prompt": "TAL",
+    "wpp": 2007
+  },
+  {
+    "prompt": "TAM",
+    "wpp": 485
+  },
+  {
+    "prompt": "TAN",
+    "wpp": 1609
+  },
+  {
+    "prompt": "TAR",
+    "wpp": 1345
+  },
+  {
+    "prompt": "TAT",
+    "wpp": 2065
+  },
+  {
+    "prompt": "TAU",
+    "wpp": 163
+  },
+  {
+    "prompt": "TAX",
+    "wpp": 229
+  },
+  {
+    "prompt": "TAY",
+    "wpp": 77
+  },
+  {
+    "prompt": "TCH",
+    "wpp": 1350
+  },
+  {
+    "prompt": "TEA",
+    "wpp": 524
+  },
+  {
+    "prompt": "TEC",
+    "wpp": 433
+  },
+  {
+    "prompt": "TEE",
+    "wpp": 671
+  },
+  {
+    "prompt": "TEG",
+    "wpp": 193
+  },
+  {
+    "prompt": "TEN",
+    "wpp": 2167
+  },
+  {
+    "prompt": "TES",
+    "wpp": 4114
+  },
+  {
+    "prompt": "TEW",
+    "wpp": 89
+  },
+  {
+    "prompt": "TEX",
+    "wpp": 131
+  },
+  {
+    "prompt": "THA",
+    "wpp": 699
+  },
+  {
+    "prompt": "THE",
+    "wpp": 3201
+  },
+  {
+    "prompt": "THI",
+    "wpp": 1281
+  },
+  {
+    "prompt": "THO",
+    "wpp": 1403
+  },
+  {
+    "prompt": "THR",
+    "wpp": 941
+  },
+  {
+    "prompt": "THU",
+    "wpp": 245
+  },
+  {
+    "prompt": "THY",
+    "wpp": 449
+  },
+  {
+    "prompt": "TID",
+    "wpp": 388
+  },
+  {
+    "prompt": "TIE",
+    "wpp": 2815
+  },
+  {
+    "prompt": "TIG",
+    "wpp": 423
+  },
+  {
+    "prompt": "TIL",
+    "wpp": 1051
+  },
+  {
+    "prompt": "TIP",
+    "wpp": 356
+  },
+  {
+    "prompt": "TIR",
+    "wpp": 281
+  },
+  {
+    "prompt": "TOD",
+    "wpp": 145
+  },
+  {
+    "prompt": "TOG",
+    "wpp": 449
+  },
+  {
+    "prompt": "TOL",
+    "wpp": 820
+  },
+  {
+    "prompt": "TOO",
+    "wpp": 312
+  },
+  {
+    "prompt": "TOP",
+    "wpp": 856
+  },
+  {
+    "prompt": "TOS",
+    "wpp": 674
+  },
+  {
+    "prompt": "TOW",
+    "wpp": 259
+  },
+  {
+    "prompt": "TOX",
+    "wpp": 219
+  },
+  {
+    "prompt": "TRA",
+    "wpp": 3943
+  },
+  {
+    "prompt": "TRE",
+    "wpp": 1540
+  },
+  {
+    "prompt": "TRI",
+    "wpp": 3885
+  },
+  {
+    "prompt": "TRO",
+    "wpp": 2568
+  },
+  {
+    "prompt": "TRU",
+    "wpp": 881
+  },
+  {
+    "prompt": "TTY",
+    "wpp": 86
+  },
+  {
+    "prompt": "TUC",
+    "wpp": 68
+  },
+  {
+    "prompt": "TUE",
+    "wpp": 36
+  },
+  {
+    "prompt": "TUF",
+    "wpp": 80
+  },
+  {
+    "prompt": "TUI",
+    "wpp": 98
+  },
+  {
+    "prompt": "TUM",
+    "wpp": 362
+  },
+  {
+    "prompt": "TUT",
+    "wpp": 202
+  },
+  {
+    "prompt": "TWA",
+    "wpp": 222
+  },
+  {
+    "prompt": "TWE",
+    "wpp": 164
+  },
+  {
+    "prompt": "TWI",
+    "wpp": 296
+  },
+  {
+    "prompt": "TWO",
+    "wpp": 177
+  },
+  {
+    "prompt": "UBE",
+    "wpp": 276
+  },
+  {
+    "prompt": "UBS",
+    "wpp": 370
+  },
+  {
+    "prompt": "UCE",
+    "wpp": 260
+  },
+  {
+    "prompt": "UCH",
+    "wpp": 501
+  },
+  {
+    "prompt": "UCK",
+    "wpp": 699
+  },
+  {
+    "prompt": "UDD",
+    "wpp": 268
+  },
+  {
+    "prompt": "UDE",
+    "wpp": 452
+  },
+  {
+    "prompt": "UDS",
+    "wpp": 115
+  },
+  {
+    "prompt": "UEL",
+    "wpp": 189
+  },
+  {
+    "prompt": "UGA",
+    "wpp": 198
+  },
+  {
+    "prompt": "UGH",
+    "wpp": 642
+  },
+  {
+    "prompt": "UGS",
+    "wpp": 87
+  },
+  {
+    "prompt": "UID",
+    "wpp": 232
+  },
+  {
+    "prompt": "UIT",
+    "wpp": 519
+  },
+  {
+    "prompt": "UKE",
+    "wpp": 104
+  },
+  {
+    "prompt": "ULB",
+    "wpp": 33
+  },
+  {
+    "prompt": "ULF",
+    "wpp": 192
+  },
+  {
+    "prompt": "ULK",
+    "wpp": 104
+  },
+  {
+    "prompt": "ULL",
+    "wpp": 811
+  },
+  {
+    "prompt": "ULP",
+    "wpp": 317
+  },
+  {
+    "prompt": "UMB",
+    "wpp": 750
+  },
+  {
+    "prompt": "UMM",
+    "wpp": 454
+  },
+  {
+    "prompt": "UNA",
+    "wpp": 631
+  },
+  {
+    "prompt": "UNC",
+    "wpp": 1608
+  },
+  {
+    "prompt": "UND",
+    "wpp": 2332
+  },
+  {
+    "prompt": "UNG",
+    "wpp": 620
+  },
+  {
+    "prompt": "UNI",
+    "wpp": 819
+  },
+  {
+    "prompt": "UNK",
+    "wpp": 384
+  },
+  {
+    "prompt": "UNL",
+    "wpp": 231
+  },
+  {
+    "prompt": "UNT",
+    "wpp": 1423
+  },
+  {
+    "prompt": "UPD",
+    "wpp": 35
+  },
+  {
+    "prompt": "UPO",
+    "wpp": 41
+  },
+  {
+    "prompt": "UPP",
+    "wpp": 338
+  },
+  {
+    "prompt": "UPS",
+    "wpp": 287
+  },
+  {
+    "prompt": "URB",
+    "wpp": 347
+  },
+  {
+    "prompt": "URD",
+    "wpp": 184
+  },
+  {
+    "prompt": "URE",
+    "wpp": 1818
+  },
+  {
+    "prompt": "URF",
+    "wpp": 191
+  },
+  {
+    "prompt": "URI",
+    "wpp": 1527
+  },
+  {
+    "prompt": "URK",
+    "wpp": 51
+  },
+  {
+    "prompt": "URN",
+    "wpp": 503
+  },
+  {
+    "prompt": "URY",
+    "wpp": 98
+  },
+  {
+    "prompt": "USE",
+    "wpp": 1542
+  },
+  {
+    "prompt": "USK",
+    "wpp": 145
+  },
+  {
+    "prompt": "UST",
+    "wpp": 1249
+  },
+  {
+    "prompt": "UTE",
+    "wpp": 842
+  },
+  {
+    "prompt": "UTS",
+    "wpp": 648
+  },
+  {
+    "prompt": "UTT",
+    "wpp": 648
+  },
+  {
+    "prompt": "UZZ",
+    "wpp": 136
+  },
+  {
+    "prompt": "VAC",
+    "wpp": 157
+  },
+  {
+    "prompt": "VAI",
+    "wpp": 100
+  },
+  {
+    "prompt": "VAP",
+    "wpp": 106
+  },
+  {
+    "prompt": "VAR",
+    "wpp": 360
+  },
+  {
+    "prompt": "VAS",
+    "wpp": 280
+  },
+  {
+    "prompt": "VAT",
+    "wpp": 559
+  },
+  {
+    "prompt": "VEG",
+    "wpp": 73
+  },
+  {
+    "prompt": "VEI",
+    "wpp": 108
+  },
+  {
+    "prompt": "VEL",
+    "wpp": 1159
+  },
+  {
+    "prompt": "VEN",
+    "wpp": 1430
+  },
+  {
+    "prompt": "VER",
+    "wpp": 4745
+  },
+  {
+    "prompt": "VES",
+    "wpp": 1022
+  },
+  {
+    "prompt": "VEX",
+    "wpp": 55
+  },
+  {
+    "prompt": "VIA",
+    "wpp": 314
+  },
+  {
+    "prompt": "VIB",
+    "wpp": 81
+  },
+  {
+    "prompt": "VIC",
+    "wpp": 337
+  },
+  {
+    "prompt": "VID",
+    "wpp": 256
+  },
+  {
+    "prompt": "VIL",
+    "wpp": 382
+  },
+  {
+    "prompt": "VIN",
+    "wpp": 809
+  },
+  {
+    "prompt": "VIO",
+    "wpp": 183
+  },
+  {
+    "prompt": "VIS",
+    "wpp": 789
+  },
+  {
+    "prompt": "VIT",
+    "wpp": 666
+  },
+  {
+    "prompt": "VIV",
+    "wpp": 169
+  },
+  {
+    "prompt": "VOG",
+    "wpp": 25
+  },
+  {
+    "prompt": "VOI",
+    "wpp": 121
+  },
+  {
+    "prompt": "VOW",
+    "wpp": 64
+  },
+  {
+    "prompt": "VUL",
+    "wpp": 276
+  },
+  {
+    "prompt": "WAB",
+    "wpp": 85
+  },
+  {
+    "prompt": "WAI",
+    "wpp": 194
+  },
+  {
+    "prompt": "WAK",
+    "wpp": 91
+  },
+  {
+    "prompt": "WAL",
+    "wpp": 394
+  },
+  {
+    "prompt": "WAN",
+    "wpp": 273
+  },
+  {
+    "prompt": "WAS",
+    "wpp": 320
+  },
+  {
+    "prompt": "WAX",
+    "wpp": 73
+  },
+  {
+    "prompt": "WEA",
+    "wpp": 407
+  },
+  {
+    "prompt": "WED",
+    "wpp": 339
+  },
+  {
+    "prompt": "WEE",
+    "wpp": 521
+  },
+  {
+    "prompt": "WER",
+    "wpp": 589
+  },
+  {
+    "prompt": "WES",
+    "wpp": 127
+  },
+  {
+    "prompt": "WET",
+    "wpp": 56
+  },
+  {
+    "prompt": "WHA",
+    "wpp": 186
+  },
+  {
+    "prompt": "WIC",
+    "wpp": 73
+  },
+  {
+    "prompt": "WID",
+    "wpp": 97
+  },
+  {
+    "prompt": "WIL",
+    "wpp": 206
+  },
+  {
+    "prompt": "WIS",
+    "wpp": 299
+  },
+  {
+    "prompt": "WIV",
+    "wpp": 45
+  },
+  {
+    "prompt": "WIZ",
+    "wpp": 31
+  },
+  {
+    "prompt": "WOL",
+    "wpp": 80
+  },
+  {
+    "prompt": "WOM",
+    "wpp": 265
+  },
+  {
+    "prompt": "WOR",
+    "wpp": 1340
+  },
+  {
+    "prompt": "WOO",
+    "wpp": 592
+  },
+  {
+    "prompt": "WOU",
+    "wpp": 45
+  },
+  {
+    "prompt": "WRA",
+    "wpp": 140
+  },
+  {
+    "prompt": "WRI",
+    "wpp": 232
+  },
+  {
+    "prompt": "XAM",
+    "wpp": 81
+  },
+  {
+    "prompt": "XED",
+    "wpp": 149
+  },
+  {
+    "prompt": "XTR",
+    "wpp": 240
+  },
+  {
+    "prompt": "YAG",
+    "wpp": 30
+  },
+  {
+    "prompt": "YAH",
+    "wpp": 37
+  },
+  {
+    "prompt": "YAK",
+    "wpp": 32
+  },
+  {
+    "prompt": "YAP",
+    "wpp": 29
+  },
+  {
+    "prompt": "YAR",
+    "wpp": 190
+  },
+  {
+    "prompt": "YAS",
+    "wpp": 78
+  },
+  {
+    "prompt": "YAW",
+    "wpp": 36
+  },
+  {
+    "prompt": "YEL",
+    "wpp": 179
+  },
+  {
+    "prompt": "YEN",
+    "wpp": 41
+  },
+  {
+    "prompt": "YIN",
+    "wpp": 984
+  },
+  {
+    "prompt": "YOG",
+    "wpp": 69
+  },
+  {
+    "prompt": "YOR",
+    "wpp": 57
+  },
+  {
+    "prompt": "YPE",
+    "wpp": 686
+  },
+  {
+    "prompt": "YUP",
+    "wpp": 21
+  },
+  {
+    "prompt": "ZEB",
+    "wpp": 39
+  },
+  {
+    "prompt": "ZED",
+    "wpp": 1309
+  },
+  {
+    "prompt": "ZEN",
+    "wpp": 171
+  },
+  {
+    "prompt": "ZES",
+    "wpp": 1355
+  },
+  {
+    "prompt": "ZIG",
+    "wpp": 29
+  },
+  {
+    "prompt": "ZIN",
+    "wpp": 1511
+  },
+  {
+    "prompt": "ZON",
+    "wpp": 210
+  },
+  {
+    "prompt": "ZOO",
+    "wpp": 344
+  },
+  {
+    "prompt": "ZZL",
+    "wpp": 202
+  }
+]
