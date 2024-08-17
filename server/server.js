@@ -7,6 +7,7 @@ const { v4: uuidv4 } = require('uuid');
 const { getRandomPrompt, generateGameCode } = require('./services/generators');
 const { verifyRealWord } = require('./services/words.service');
 const { incrementTurn } = require('./services/turn.service');
+const { botPlays } = require('./services/bot.service');
 
 const app = express();
 const server = http.createServer(app);
@@ -303,6 +304,19 @@ io.on('connection', (socket) => {
         prompt: game.prompt,
         timer: game.timer
       });
+      const didBotPlay = botPlays(game.gamePlayers, game.turn, game.prompt);
+      if(didBotPlay) {
+        io.to(gameCode).emit('gameUpdate', {
+          lobbyPlayers: lobby.lobbyPlayers,
+          gamePlayers: game.gamePlayers,
+          turn: game.turn,
+          prompt: game.prompt,
+          timer: game.timer
+        });
+        game.turn = incrementTurn(game.gamePlayers, game.turn);
+        game.prompt = getRandomPrompt();
+        game.timer = settings.timerDuration;
+      }
     }
     else {
       console.error(`Game not found: ${gameCode}`);
@@ -320,6 +334,12 @@ io.on('connection', (socket) => {
       settings.startingLives = data.lives;
       settings.maxLives = data.maxLives;
       settings.difficulty = data.difficulty;
+      if(data.bot) {
+        const players = games[gameCode].gamePlayers;
+        settings.bot = data.bot;
+        const botPlayer = { name: 'Bot', lives: settings.startingLives, alive: true, bot: true };
+        players.push(botPlayer);
+      }
       console.log(`=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
       console.log(`Visibility: ${settings.visibility}\nTimer: ${settings.timerDuration}\nStarting Lives: ${settings.startingLives}\nMax Lives: ${settings.maxLives}\nDifficulty: ${settings.difficulty}`);
       io.to(gameCode).emit('settingsUpdate', {

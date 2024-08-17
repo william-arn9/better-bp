@@ -1,23 +1,32 @@
-# Getting Started with Create React App
+# Getting Started with Bombparty
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bombparty is a word-based web game originally developed by Sparklin Labs. Players join the game at the start of a round, then the game commenses in a turn-based approach. Each player has a configured amount of time (2-10 seconds) to type a word that contains a given prompt of two or three letters. The player will lose a life if they do not enter the word in time. The last player standing is the winner.
+
+## Difficulty
+
+The difficulty of the game is variable based on a _words per prompt (wpp)_ concept. Each prompt (ex. GA, RE, ICH) has a number of possible solutions. The default difficulty is min-500 wpp which means each prompt will have a minimum of 500 possible solutions. The game can be played at various difficulties but typically min-500 wpp is considered easy for new players, and min-100 wpp is considered difficult for new players. Some experienced players will play very difficult modes such as max-100 wpp.
+
+## Structure
+
+This project is a fullstack mono-repo. The frontend is React and the backend is a Node Express API. The application is currently only configured for a dev-mode deployment with the server running on port 4000 and the UI running on port 3000.
+
+The React app uses Tailwind for styling. As a result, minimal styling documents are present in the application. All new styling should be written as Tailwind classes.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm install`
+
+Remember to run this command after cloning the repo to ensure you install the necessary packages to run the application.
+
+### `npm run start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -29,15 +38,9 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+# Some React Notes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The remainder of the doc is boilerplate React read-me for reference materials.
 
 ## Learn More
 
