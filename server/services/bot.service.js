@@ -6,6 +6,7 @@ const fileContent = fs.readFileSync(filePath, 'utf-8');
 const words = fileContent.split('\n').map(word => word.trim()).filter(word => word.length > 0);
 
 function botPlays(gamePlayers, turn, prompt) {
+  console.log(`Bot attempting to play prompt: ${prompt}`);
   if(gamePlayers[turn].bot) {
     const minWords = words.filter((w) => w.includes(prompt));
     const randomIndex = Math.floor(Math.random() * minWords.length);

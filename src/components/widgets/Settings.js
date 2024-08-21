@@ -150,6 +150,16 @@ const Settings = () => {
           <option value={100}>Hard (Minimum 100 words per prompt)</option>
         </select>
       </label>
+      <label className="mb-2">
+        Bot Active:
+        <input
+          name="bot"
+          type="checkbox"
+          checked={settings?.bot}
+          onChange={handleChange}
+          disabled={myUser?.role !== 'leader'}
+        />
+      </label>
     </form>
   );
 };
