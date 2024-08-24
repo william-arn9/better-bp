@@ -20,10 +20,9 @@ module.exports = (socket, io) => {
   });
 
   socket.on('joinLobby', ({gameCode, data}) => {
-    const game = getGame(gameCode);
-    if(game) {
-      const lobby = game.lobby;
-      const roles = game.roles;
+    const gameProps = getGame(gameCode);
+    if(gameProps) {
+      const { lobby, roles } = gameProps;
       if(!lobby.lobbyPlayers.find((p) => p.name === data.username)) {
         // Assign auth token and verify role
         const userToken = uuidv4();
@@ -44,11 +43,10 @@ module.exports = (socket, io) => {
   });
 
   socket.on('leaveLobby', ({gameCode, data}) => {
-    const game = getGame(gameCode);
-    if(game) {
+    const gameProps = getGame(gameCode);
+    if(gameProps) {
       // Remove user and user role
-      const lobby = game.lobby;
-      const roles = game.roles;
+      const { lobby, roles } = gameProps;
       console.log(`Leaving lobby: ${data.username}`);
       const player = lobby.lobbyPlayers.find((p) => p.name === data.username);
       lobby.lobbyPlayers = lobby.lobbyPlayers.filter((p) => p.name !== data.username);
@@ -65,9 +63,9 @@ module.exports = (socket, io) => {
   });
 
   socket.on('authFetch', ({gameCode, data}) => {
-    const game = getGame(gameCode);
-    if(game) {
-      const lobby = game.lobby;
+    const gameProps = getGame(gameCode);
+    if(gameProps) {
+      const lobby = gameProps.lobby;
       const user = lobby.lobbyPlayers.find((p) => p.name === data.username);
       io.to(gameCode).emit('auth', user);
     }

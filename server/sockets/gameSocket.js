@@ -1,9 +1,10 @@
 const { getGame, createGame, updateGame } = require('../managers/gameManager');
 const { verifyRealWord } = require('../services/words.service');
 const { incrementTurn } = require('../services/turn.service');
-const { botPlays } = require('../services/bot.service');
+const { botPlays, configureBotPlayers } = require('../services/bot.service');
 const { startStartTimer } = require('../services/timers.service');
 const { getRandomPrompt } = require('../services/generators');
+const { createGamePlayer } = require('../services/player.service');
 
 module.exports = (socket, io) => {
   socket.on('createGame', ({visibility, lobbyName}, callback) => {
@@ -13,7 +14,7 @@ module.exports = (socket, io) => {
         gamePlayers: [],
         prompt: '',
         word: '',
-        timer: 60,
+        timer: 5,
         turn: 0,
         interval: null,
         startTimer: 15
@@ -40,10 +41,8 @@ module.exports = (socket, io) => {
   socket.on('joinGame', ({gameCode, data}) => {
     const gameProps = getGame(gameCode);
     if(gameProps) {
-      const game = gameProps.game;
-      const lobby = gameProps.lobby;
-      const settings = gameProps.settings;
-      game.gamePlayers.push({ name: data.username, lives: settings.startingLives, alive: true });
+      const { game, lobby, settings } = gameProps;
+      game.gamePlayers.push(createGamePlayer(data, settings));
       if(game.gamePlayers.length > 1) {
         startStartTimer(gameCode, io);
       }
@@ -64,8 +63,7 @@ module.exports = (socket, io) => {
   socket.on('leaveGame', ({gameCode, data}) => {
     const gameProps = getGame(gameCode);
     if(gameProps) {
-      const game = gameProps.game;
-      const lobby = gameProps.lobby;
+      const { game, lobby } = gameProps;
       game.gamePlayers = game.gamePlayers.filter((p) => p.name !== data.username);
       io.emit('gameUpdate', {
         lobbyPlayers: lobby.lobbyPlayers,
@@ -84,8 +82,7 @@ module.exports = (socket, io) => {
   socket.on('typeChar', ({gameCode, data}) => {
     const gameProps = getGame(gameCode);
     if(gameProps) {
-      const game = gameProps.game;
-      const lobby = gameProps.lobby;
+      const { game, lobby } = gameProps;
       game.gamePlayers[game.turn].inputVal = data.inputVal;
       io.to(gameCode).emit('gameUpdate', {
         lobbyPlayers: lobby.lobbyPlayers,
@@ -104,9 +101,7 @@ module.exports = (socket, io) => {
   socket.on('submitWord', ({gameCode, data}) => {
     const gameProps = getGame(gameCode);
     if(gameProps) {
-      const game = gameProps.game;
-      const lobby = gameProps.lobby;
-      const settings = gameProps.settings;
+      const { game, lobby, settings } = gameProps;
       game.word = data.word;
       if(game.word === '/BOOM') {
         game.timer = settings.timerDuration;
@@ -167,24 +162,20 @@ module.exports = (socket, io) => {
   });
 
   socket.on('updateSettings', ({gameCode, data}) => {
-    console.log(data);
+    console.debug(data);
     const gameProps = getGame(gameCode);
     if(gameProps) {
-      const settings = games[gameCode].settings;
+      const settings = gameProps.settings;
       settings.visibility = data.visibility;
       settings.timerDuration = data.timer;
       settings.startingLives = data.lives;
       settings.maxLives = data.maxLives;
       settings.difficulty = data.difficulty;
       if(data.bot) {
-        console.log('Setting bot player');
-        const players = games[gameCode].game.gamePlayers;
-        settings.bot = data.bot;
-        const botPlayer = { name: 'Bot', lives: settings.startingLives, alive: true, bot: true };
-        players.push(botPlayer);
+        configureBotPlayers(data, gameProps);
       }
-      console.log(`=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
-      console.log(`Visibility: ${settings.visibility}\nTimer: ${settings.timerDuration}\nStarting Lives: ${settings.startingLives}\nMax Lives: ${settings.maxLives}\nDifficulty: ${settings.difficulty}`);
+      console.debug(`=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
+      console.debug(`Visibility: ${settings.visibility}\nTimer: ${settings.timerDuration}\nStarting Lives: ${settings.startingLives}\nMax Lives: ${settings.maxLives}\nDifficulty: ${settings.difficulty}`);
       io.to(gameCode).emit('settingsUpdate', {
         visibility: settings.visibility,
         timer: settings.timerDuration,
