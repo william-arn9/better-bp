@@ -165,7 +165,8 @@ const Game = () => {
               {gamePlayers.length > 1 && (<div className="my-4 text-secondary font-bold text-2xl">{startTimer}</div>)}
               <ul>
                 {gamePlayers.map((player, index) => (
-                    <li className={`my-2 p-2 flex items-center border-2 border-primary rounded-md text-primary ${turn === index ? 'bg-secondary' : ''} ${!player.alive ? 'bg-background border border-darkest text-darkest' : ''}`} key={index}>{player.name}
+                    <li className={`my-2 p-2 flex flex-col items-center border-2 border-primary rounded-md text-primary ${turn === index ? 'bg-secondary' : ''} ${!player.alive ? 'bg-background border border-darkest text-darkest' : ''}`} key={index}>
+                      <p>{player.name}</p>
                       {Array.from({ length: player.lives }).map((_, index) => (
                         <FaHeart index={index} className="ml-2 text-red-500" />
                       ))}
@@ -181,17 +182,21 @@ const Game = () => {
               <div className="my-4 text-secondary font-bold text-2xl">{timer}</div>
               <ul className="my-4">
                 {gamePlayers.map((player, index) => (
-                  <li className={`my-2 p-2 flex items-center border-2 border-primary rounded-md text-primary ${turn === index ? 'bg-secondary' : ''} ${!player.alive ? 'bg-background border border-darkest text-darkest' : ''}`} key={index}>{player.name}
-                    {Array.from({ length: player.lives }).map((_, index) => (
-                      <FaHeart index={index} className="ml-2 text-red-500" />
-                    ))}
-                    <p>{player.inputVal}</p>
+                  <li className={`min-w-[280px] my-2 p-2 flex flex-col items-center border-2 border-primary rounded-md text-primary ${turn === index ? 'bg-secondary' : ''} ${!player.alive ? 'bg-background border border-darkest text-darkest' : ''}`} key={index}>
+                    <p className="font-bold text-lg">{player.name}</p>
+                    <div className="flex">
+                      {Array.from({ length: player.lives }).map((_, index) => (
+                        <FaHeart index={index} className="ml-2 text-red-500" />
+                      ))}
+                    </div>
+                    <p className="">{player.inputVal}</p>
                   </li>
                 ))}
               </ul>
               {gamePlayers[turn]?.name === myUser && (
                 <>
                   <input
+                    className="w-[320px] p-4 border rounded-md text-lg"
                     type="text"
                     id="entry"
                     value={inputValue}
