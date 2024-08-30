@@ -102,9 +102,10 @@ const Game = () => {
         console.error('Error playing audio:', error);
       });
     } 
+    setInputValue((''));
     // Update previous gamePlayers state
     prevTurnRef.current = turn;
-    prevGamePlayersRef.cuhrrent = gamePlayers;
+    prevGamePlayersRef.current = gamePlayers;
   }, [gamePlayers, turn]);
 
   const handleJoinGame = () => {
@@ -167,9 +168,11 @@ const Game = () => {
                 {gamePlayers.map((player, index) => (
                     <li className={`my-2 p-2 flex flex-col items-center border-2 border-primary rounded-md text-primary ${turn === index ? 'bg-secondary' : ''} ${!player.alive ? 'bg-background border border-darkest text-darkest' : ''}`} key={index}>
                       <p>{player.name}</p>
-                      {Array.from({ length: player.lives }).map((_, index) => (
-                        <FaHeart index={index} className="ml-2 text-red-500" />
-                      ))}
+                      <div className="flex">
+                        {Array.from({ length: player.lives }).map((_, index) => (
+                          <FaHeart index={index} className="mx-1 text-red-500" />
+                        ))}
+                      </div>
                     </li>
                   ))}
               </ul>

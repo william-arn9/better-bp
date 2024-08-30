@@ -16,7 +16,7 @@ const startTurnTimer = (gameCode, io) => {
     io.to(gameCode).emit('timerUpdate', { timer: game.timer, turn: game.turn });
     console.log(`Sent`);
     if (game.timer === 0) {
-      game.timer = game.timerDuration;
+      game.timer = settings.timerDuration;
       game.gamePlayers[game.turn].lives--;
       if(game.gamePlayers[game.turn].lives === 0) {
         game.gamePlayers[game.turn].alive = false;
@@ -34,6 +34,9 @@ const startTurnTimer = (gameCode, io) => {
           });
           clearInterval(game.interval);
           return;
+        }
+        else {
+
         }
       }
       game.turn = incrementTurn(game.gamePlayers, game.turn);
