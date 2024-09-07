@@ -107,6 +107,13 @@ module.exports = (socket, io) => {
   socket.on('updateSettings', ({gameCode, data}) => {
     const gameProps = gameManager.getGame(gameCode);
     if(gameProps) {
+      data = {
+        visibility: data.visibility,
+        timerDuration: data.timer,
+        startingLives: data.lives,
+        maxLives: data.maxLives,
+        difficulty: data.difficulty
+      };
       gameProps.setSettings(data);
       if(data.bot) {
         configureBotPlayers(data, gameProps);

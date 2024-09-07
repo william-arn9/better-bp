@@ -42,5 +42,5 @@ class SocketEventManager {
   }
 }
 
-const eventManager = new SocketEventManager(io);
-module.exports = socketManager;
+const eventManager = new SocketEventManager();
+module.exports = eventManager;

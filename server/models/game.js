@@ -42,7 +42,7 @@ class Game {
   getActivePlayer() {
     return this.gamePlayers[game.turn];
   }
-  findPlayer(id) {
+  findPlayer(username) {
     return this.gamePlayers.find((p) => p.name === username);
   }
   setPlayerInput(inputVal) {

@@ -1,16 +1,11 @@
-const { GameData } = require("../models/gameData");
+
+const GameData = require("../models/gameData");
 const { generateGameCode } = require("../services/generators");
 
 class GameManager {
   constructor() {
-    if (GameManager.instance) {
-      return GameManager.instance;
-    }
-
     this.games = new Map();
     this.buildRankedGames();
-
-    GameManager.instance = this;
   }
 
   buildRankedGames() {

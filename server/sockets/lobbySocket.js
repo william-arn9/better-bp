@@ -7,12 +7,14 @@ module.exports = (socket, io) => {
     const games = gameManager.getAllGames();
     const retArray = [];
     games.forEach((game, gameCode) => {
-      if (game.settings.visibility === 'public') {
+      const lobby = game.getLobby();
+      const settings = game.getSettings();
+      if (settings.visibility === 'public') {
         retArray.push({
           gameCode,
-          difficulty: game.settings.difficulty,
-          name: game.lobby.lobbyName,
-          players: game.lobby.lobbyPlayers.length
+          difficulty: settings.difficulty,
+          name: lobby.lobbyName,
+          players: lobby.size
         });
       }
     });

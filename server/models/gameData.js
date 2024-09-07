@@ -1,8 +1,8 @@
-const { Game } = require("./game");
-const { Lobby } = require("./lobby");
-const { Settings } = require("./settings");
+const Game = require("./game");
+const Lobby = require("./lobby");
+const Settings = require("./settings");
 
-export class GameData {
+class GameData {
   constructor(lobbyName, visibility = 'public') {
     this.game = new Game();
     this.lobby = new Lobby(lobbyName);
@@ -25,6 +25,7 @@ export class GameData {
 
   setSettings(partialSettings) {
     this.settings.updateSettings(partialSettings);
+    return this;
   }
 
   pushChat(message) {
@@ -35,3 +36,5 @@ export class GameData {
     this.game.timer = this.settings.timerDuration;
   }
 }
+
+module.exports = GameData;
