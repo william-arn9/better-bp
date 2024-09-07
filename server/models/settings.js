@@ -10,6 +10,15 @@ class Settings {
   updateSettings(partialSettings) {
     Object.assign(this, partialSettings);
   }
+  getTransformedSettings() {
+    return {
+      visibility: this.visibility,
+      timer: this.timerDuration,
+      lives: this.startingLives,
+      maxLives: this.maxLives,
+      difficulty: this.difficulty
+    };
+  }
 }
 
 module.exports = Settings;

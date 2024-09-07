@@ -1,13 +1,13 @@
-const { getGame, getAllGames } = require('../managers/gameManager');
+const gameManager = require('../managers/gameManager');
 const { v4: uuidv4 } = require('uuid');
+const eventManager = require('../managers/socketEventManager');
 
 module.exports = (socket, io) => {
   socket.on('getLobbies', () => {
-    const games = getAllGames();
+    const games = gameManager.getAllGames();
     const retArray = [];
-    for(let gameCode in games) {
-      const game = games[gameCode];
-      if(game.settings.visibility === 'public') {
+    games.forEach((game, gameCode) => {
+      if (game.settings.visibility === 'public') {
         retArray.push({
           gameCode,
           difficulty: game.settings.difficulty,
@@ -15,63 +15,60 @@ module.exports = (socket, io) => {
           players: game.lobby.lobbyPlayers.length
         });
       }
-    }
+    });
     io.emit('lobbyListUpdate', retArray);
   });
 
   socket.on('joinLobby', ({gameCode, data}) => {
-    const gameProps = getGame(gameCode);
+    const gameProps = gameManager.getGame(gameCode);
     if(gameProps) {
-      const { lobby, roles } = gameProps;
-      if(!lobby.lobbyPlayers.find((p) => p.name === data.username)) {
-        // Assign auth token and verify role
+      const lobby = gameProps.getLobby();
+      const roles = gameProps.getRoles();
+      if(!lobby.findPlayer(data.username)) {
         const userToken = uuidv4();
-        const userRole = lobby.lobbyPlayers.length === 0 ? 'leader' : 'player';
-        lobby.lobbyPlayers.push({ name: data.username, token: userToken, role: userRole });
-        roles[userToken] = userRole;
+        const userRole = lobby.size === 0 ? 'leader' : 'player';
+        lobby.pushPlayer({ name: data.username, token: userToken, role: userRole });
+        roles.set(userToken, userRole);
         socket.join(gameCode);
-        // Notify in chat that user has joined
-        lobby.messageLog.push({ user: '$system', message: `${data.username} has joined the lobby.` });
-        // Send return socket event
-        io.to(gameCode).emit('lobbyUpdate', { lobbyPlayers: lobby.lobbyPlayers, messageLog: lobby.messageLog });
+        lobby.pushChatMessage({ user: '$system', message: `${data.username} has joined the lobby.` });
+        eventManager.emitLobbyUpdate(io, gameCode, lobby);
       }
     }
     else {
       console.error(`Game not found: ${gameCode}`);
-      socket.emit('error', `Game not found: ${gameCode}`);
+      eventManager.emitError(socket, `Game not found: ${gameCode}`);
     }
   });
 
   socket.on('leaveLobby', ({gameCode, data}) => {
-    const gameProps = getGame(gameCode);
+    const gameProps = gameManager.getGame(gameCode);
     if(gameProps) {
-      // Remove user and user role
-      const { lobby, roles } = gameProps;
-      console.log(`Leaving lobby: ${data.username}`);
-      const player = lobby.lobbyPlayers.find((p) => p.name === data.username);
-      lobby.lobbyPlayers = lobby.lobbyPlayers.filter((p) => p.name !== data.username);
-      if (player) roles[player.token] = undefined;
-      // Notify in chat that user has left
-      lobby.messageLog.push({ user: '$system', message: `${data.username} has left the lobby.` });
-      // Send return socket event
-      io.to(gameCode).emit('lobbyUpdate', { lobbyPlayers: lobby.lobbyPlayers, messageLog: lobby.messageLog });
+      const lobby = gameProps.getLobby();
+      const roles = gameProps.getRoles();
+      const player = lobby.findPlayer(data.username);
+      if (player) {
+        roles.delete(player.token);
+        lobby.removePlayer(data.username);
+      }
+      lobby.pushChatMessage({ user: '$system', message: `${data.username} has left the lobby.` });
+      eventManager.emitLobbyUpdate(io, gameCode, lobby);
     }
     else {
       console.error(`Game not found: ${gameCode}`);
-      socket.emit('error', `Game not found: ${gameCode}`);
+      eventManager.emitError(socket, `Game not found: ${gameCode}`);
     }
   });
 
   socket.on('authFetch', ({gameCode, data}) => {
-    const gameProps = getGame(gameCode);
+    const gameProps = gameManager.getGame(gameCode);
     if(gameProps) {
-      const lobby = gameProps.lobby;
-      const user = lobby.lobbyPlayers.find((p) => p.name === data.username);
-      io.to(gameCode).emit('auth', user);
+      const lobby = gameProps.getLobby();
+      const user = lobby.findPlayer(data.username);
+      eventManager.emitAuth(io, gameCode, user);
     }
     else {
       console.error(`Game not found: ${gameCode}`);
-      socket.emit('error', `Game not found: ${gameCode}`);
+      eventManager.emitError(socket, `Game not found: ${gameCode}`);
     }
   });
 };

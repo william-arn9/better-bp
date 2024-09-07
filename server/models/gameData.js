@@ -10,12 +10,17 @@ export class GameData {
     this.roles = new Map();
   }
 
-  getGameCode() {
-    return this.code;
+  getGame() {
+    return this.game;
   }
-
   getLobby() {
     return this.lobby;
+  }
+  getSettings() {
+    return this.settings;
+  }
+  getRoles() {
+    return this.roles;
   }
 
   setSettings(partialSettings) {
@@ -24,5 +29,9 @@ export class GameData {
 
   pushChat(message) {
     this.lobby.pushChatMessage(message);
+  }
+
+  resetGameTimer() {
+    this.game.timer = this.settings.timerDuration;
   }
 }

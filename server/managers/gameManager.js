@@ -25,7 +25,7 @@ class GameManager {
   }
 
   getAllGames() {
-    return 'I still need to write this function';
+    return this.games;
   }
 
   createGame(lobbyName, visibility) {
