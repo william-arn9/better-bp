@@ -1,12 +1,11 @@
-const { getGame } = require('../managers/gameManager');
+const gameManager = require('../managers/gameManager');
 
 module.exports = (socket, io) => {
-    // Handle chat message
     socket.on('sendMessage', ({gameCode, data}) => {
-      const gameProps = getGame(gameCode);
+      const gameProps = gameManager.getGame(gameCode);
       if(gameProps) {
-        const lobby = gameProps.lobby;
-        lobby.messageLog.push(data);
+        gameProps.pushChat(data);
+        const lobby = gameProps.getLobby();
         io.to(gameCode).emit('lobbyUpdate', { lobbyPlayers: lobby.lobbyPlayers, messageLog: lobby.messageLog }); 
       }
       else {

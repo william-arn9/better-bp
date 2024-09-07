@@ -1,45 +1,21 @@
-const { getGame, createGame, updateGame } = require('../managers/gameManager');
+const { getGame, createGame } = require('../managers/gameManager');
 const { verifyRealWord } = require('../services/words.service');
 const { incrementTurn } = require('../services/turn.service');
 const { botPlays, configureBotPlayers } = require('../services/bot.service');
 const { startStartTimer } = require('../services/timers.service');
 const { getRandomPrompt } = require('../services/generators');
 const { createGamePlayer } = require('../services/player.service');
+const gameManager = require('../managers/gameManager');
 
 module.exports = (socket, io) => {
   socket.on('createGame', ({visibility, lobbyName}, callback) => {
-    const gameCode = generateGameCode();
-    const game = {
-      game: {
-        gamePlayers: [],
-        prompt: '',
-        word: '',
-        timer: 5,
-        turn: 0,
-        interval: null,
-        startTimer: 15
-      },
-      lobby: {
-        lobbyPlayers: [],
-        messageLog: [],
-        lobbyName
-      },
-      settings: {
-        visibility: visibility,
-        timerDuration: 5,
-        startingLives: 2,
-        maxLives: 3,
-        difficulty: 500,
-      },
-      roles: {}
-    };
-    createGame(gameCode, game);
+    const gameCode = gameManager.createGame(lobbyName, visibility);
     socket.join(gameCode);
     callback(gameCode);
   });
 
   socket.on('joinGame', ({gameCode, data}) => {
-    const gameProps = getGame(gameCode);
+    const gameProps = gameManager.getGame(gameCode);
     if(gameProps) {
       const { game, lobby, settings } = gameProps;
       game.gamePlayers.push(createGamePlayer(data, settings));
