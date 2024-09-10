@@ -29,6 +29,25 @@ class SocketEventManager {
     });
   }
 
+  emitTimerUpdate(io, gameCode, game) {
+    io.to(gameCode).emit('timerUpdate', {
+      timer: game.timer,
+      turn: game.turn
+    });
+  }
+
+  emitStartTimerUpdate(io, gameCode, game) {
+    io.to(gameCode).emit('startTimerUpdate', { startTimer: game.startTimer });
+  }
+
+  emitStartGame(io, gameCode) {
+    io.to(gameCode).emit('startGame');
+  }
+
+  emitEndGame(io, gameCode) {
+    io.to(gameCode).emit('endGame');
+  }
+
   emitError(socket, message) {
     socket.emit('error', message);
   }

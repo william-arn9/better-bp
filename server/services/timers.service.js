@@ -10,7 +10,7 @@ const startTurnTimer = (gameCode, io) => {
   gameProps.resetGameTimer();
   game.interval = setInterval(() => {
     game.timer -= 1;
-    io.to(gameCode).emit('timerUpdate', { timer: game.timer, turn: game.turn });
+    eventManager.emitTimerUpdate(io, gameCode, game);
     if (game.timer === 0) {
       gameProps.resetGameTimer();
       game.decrementLives();
@@ -21,7 +21,7 @@ const startTurnTimer = (gameCode, io) => {
         if(livingPlayers.length < 2) {
           game.winner = livingPlayers[0].name;
           game.resetGamePlayers();
-          io.to(gameCode).emit('endGame');
+          eventManager.emitEndGame(io, gameCode);
           eventManager.emitGameUpdate(io, gameCode, lobby, game);
           clearInterval(game.interval);
           return;
@@ -29,6 +29,15 @@ const startTurnTimer = (gameCode, io) => {
       }
       game.incrementTurn();
       eventManager.emitGameUpdate(io, gameCode, lobby, game);
+      const didBotPlay = botPlays(game.gamePlayers, game.turn, game.prompt);
+      if(didBotPlay) {
+        console.log(`Bot played ${didBotPlay}`);
+        game.setPlayerInput(didBotPlay);
+        game.incrementTurn();
+        game.getNewPrompt();
+        gameProps.resetGameTimer();
+        eventManager.emitGameUpdate(io, gameCode, lobby, game);
+      }
     }
   }, 1000);
 };
@@ -37,14 +46,13 @@ const startStartTimer = (gameCode, io) => {
   const gameProps = gameManager.getGame(gameCode);
   const game = gameProps.getGame();
   const lobby = gameProps.getLobby();
-  const settings = gameProps.settings;
   game.interval = setInterval(() => {
     game.startTimer--;
-    io.to(gameCode).emit('startTimerUpdate', { startTimer: game.startTimer });
+    eventManager.emitStartTimerUpdate(io, gameCode, game);
     if(game.startTimer === 0) {
       game.getNewPrompt();
       clearInterval(game.interval);
-      io.to(gameCode).emit('startGame');
+      eventManager.emitStartGame(io, gameCode);
       eventManager.emitGameUpdate(io, gameCode, lobby, game);
       const didBotPlay = botPlays(game.gamePlayers, game.turn, game.prompt);
       if(didBotPlay) {

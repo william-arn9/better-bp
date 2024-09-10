@@ -91,7 +91,7 @@ module.exports = (socket, io) => {
       const didBotPlay = botPlays(game.gamePlayers, game.turn, game.prompt);
       console.log(`Bot played ${didBotPlay}`);
       if(didBotPlay) {
-        game.gamePlayers[game.turn].inputVal = didBotPlay;
+        game.setPlayerInput(didBotPlay);
         game.incrementTurn();
         game.getNewPrompt();
         game.timer = settings.timerDuration;
@@ -112,11 +112,14 @@ module.exports = (socket, io) => {
         timerDuration: data.timer,
         startingLives: data.lives,
         maxLives: data.maxLives,
-        difficulty: data.difficulty
+        difficulty: data.difficulty,
+        bot: data.bot
       };
       gameProps.setSettings(data);
       if(data.bot) {
+        console.log(`In add bot..`);
         configureBotPlayers(data, gameProps);
+        eventManager.emitGameUpdate(io, gameCode, gameProps.getLobby(), gameProps.getGame());
       }
       const settings = gameProps.getSettings();
       eventManager.emitSettingsUpdate(io, gameCode, settings);

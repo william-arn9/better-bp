@@ -40,7 +40,7 @@ class Game {
     return this.gamePlayers.filter((player) => player.alive);
   }
   getActivePlayer() {
-    return this.gamePlayers[game.turn];
+    return this.gamePlayers[this.turn];
   }
   findPlayer(username) {
     return this.gamePlayers.find((p) => p.name === username);
@@ -49,7 +49,7 @@ class Game {
     this.gamePlayers[this.turn].inputVal = inputVal;
   }
   decrementLives() {
-    this.gamePlayers[game.turn].lives--;
+    this.gamePlayers[this.turn].lives--;
   }
 }
 

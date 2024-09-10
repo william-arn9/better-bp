@@ -14,7 +14,7 @@ function configureBotPlayers(socketData, gameProps) {
     alive: true,
     bot: true
   };
-  game.gamePlayers.push(botPlayer);
+  game.pushPlayer(botPlayer);
 }
 
 function botPlays(gamePlayers, turn, prompt) {
