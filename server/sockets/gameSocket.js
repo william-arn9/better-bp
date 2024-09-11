@@ -118,8 +118,12 @@ module.exports = (socket, io) => {
       gameProps.setSettings(data);
       if(data.bot) {
         console.log(`In add bot..`);
+        const game = gameProps.getGame();
         configureBotPlayers(data, gameProps);
-        eventManager.emitGameUpdate(io, gameCode, gameProps.getLobby(), gameProps.getGame());
+        if(game.size > 1) {
+          startStartTimer(gameCode, io);
+        }
+        eventManager.emitGameUpdate(io, gameCode, gameProps.getLobby(), game);
       }
       const settings = gameProps.getSettings();
       eventManager.emitSettingsUpdate(io, gameCode, settings);
