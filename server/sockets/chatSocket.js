@@ -1,17 +1,17 @@
-const { getGame } = require('../managers/gameManager');
+const gameManager = require('../managers/gameManager');
+const eventManager = require('../managers/socketEventManager');
 
 module.exports = (socket, io) => {
-    // Handle chat message
     socket.on('sendMessage', ({gameCode, data}) => {
-      const gameProps = getGame(gameCode);
+      const gameProps = gameManager.getGame(gameCode);
       if(gameProps) {
-        const lobby = gameProps.lobby;
-        lobby.messageLog.push(data);
-        io.to(gameCode).emit('lobbyUpdate', { lobbyPlayers: lobby.lobbyPlayers, messageLog: lobby.messageLog }); 
+        gameProps.pushChat(data);
+        const lobby = gameProps.getLobby();
+        eventManager.emitLobbyUpdate(io, gameCode, lobby);
       }
       else {
         console.error(`Game not found: ${gameCode}`);
-        socket.emit('error', `Game not found: ${gameCode}`);
+        eventManager.emitError(socket, `Game not found: ${gameCode}`);
       }
     });
 };

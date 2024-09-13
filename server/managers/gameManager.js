@@ -1,57 +1,35 @@
-let games = {
-  XXXX: {
-    game: {
-      gamePlayers: [],
-      prompt: '',
-      word: '',
-      timer: 5,
-      turn: 0,
-      interval: null,
-      startTimer: 15
-    },
-    lobby: {
-      lobbyPlayers: [],
-      messageLog: [],
-      lobbyName: 'Ranked BP'
-    },
-    settings: {
-      visibility: 'public',
-      timerDuration: 5,
-      startingLives: 2,
-      maxLives: 3,
-      difficulty: 100,
-    },
-    roles: {}
-  },
-  ABCD: {
-    game: {
-      gamePlayers: [],
-      prompt: '',
-      word: '',
-      timer: 5,
-      turn: 0,
-      interval: null,
-      startTimer: 15
-    },
-    lobby: {
-      lobbyPlayers: [],
-      messageLog: [],
-      lobbyName: 'Ranked BP Easy'
-    },
-    settings: {
-      visibility: 'public',
-      timerDuration: 5,
-      startingLives: 2,
-      maxLives: 3,
-      difficulty: 500,
-    },
-    roles: {}
+
+const GameData = require("../models/gameData");
+const { generateGameCode } = require("../services/generators");
+
+class GameManager {
+  constructor() {
+    this.games = new Map();
+    this.buildRankedGames();
   }
-};
 
-const getGame = (gameCode) => games[gameCode];
-const getAllGames = () => games;
-const createGame = (gameCode, gameData) => games[gameCode] = gameData;
-const updateGame = (gameCode, gameData) => games[gameCode] = gameData;
+  buildRankedGames() {
+    const easyRanked = new GameData('Ranked BP Easy', 'public');
+    const hardRanked = new GameData('Ranked BP', 'public').setSettings({difficulty: 100});
+    this.games.set('ABCD', easyRanked);
+    this.games.set('XXXX', hardRanked);
+  }
 
-module.exports = { getGame, getAllGames, createGame, updateGame, games };
+  getGame(gameCode) {
+    return this.games.get(gameCode);
+  }
+
+  getAllGames() {
+    return this.games;
+  }
+
+  createGame(lobbyName, visibility) {
+    const gameCode = generateGameCode();
+    const game = new GameData(lobbyName, visibility);
+    this.games.set(gameCode, game);
+    return gameCode;
+  }
+}
+
+const gameManager = new GameManager();
+module.exports = gameManager;

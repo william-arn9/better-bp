@@ -1,101 +1,72 @@
-const { incrementTurn } = require('../services/turn.service');
-const { getRandomPrompt } = require('../services/generators');
 const { botPlays } = require('../services/bot.service');
-const { getGame } = require('../managers/gameManager');
+const gameManager = require('../managers/gameManager');
+const eventManager = require('../managers/socketEventManager');
 
 const startTurnTimer = (gameCode, io) => {
-  const gameProps = getGame(gameCode);
-  const game = gameProps.game;
-  const lobby = gameProps.lobby;
-  const settings = gameProps.settings;
+  const gameProps = gameManager.getGame(gameCode);
+  const game = gameProps.getGame();
+  const lobby = gameProps.getLobby();
   clearInterval(game.interval);
-  game.timer = settings.timerDuration;
+  gameProps.resetGameTimer();
   game.interval = setInterval(() => {
     game.timer -= 1;
-    console.log(`Sending timer decrement: ${game.timer}`);
-    io.to(gameCode).emit('timerUpdate', { timer: game.timer, turn: game.turn });
-    console.log(`Sent`);
+    eventManager.emitTimerUpdate(io, gameCode, game);
     if (game.timer === 0) {
-      game.timer = settings.timerDuration;
-      game.gamePlayers[game.turn].lives--;
-      if(game.gamePlayers[game.turn].lives === 0) {
-        game.gamePlayers[game.turn].alive = false;
-        if(game.gamePlayers.filter((player) => player.alive).length < 2) {
-          game.winner = game.gamePlayers.filter((player) => player.alive)[0].name;
-          game.gamePlayers = [];
-          io.to(gameCode).emit('endGame');
-          io.to(gameCode).emit('gameUpdate', {
-            lobbyPlayers: lobby.lobbyPlayers,
-            gamePlayers: [],
-            turn: 0,
-            prompt: game.prompt,
-            timer: game.timer,
-            winner: game.winner
-          });
+      gameProps.resetGameTimer();
+      game.decrementLives();
+      const player = game.getActivePlayer();
+      if(player.lives === 0) {
+        player.alive = false;
+        const livingPlayers = game.getLivingPlayers();
+        if(livingPlayers.length < 2) {
+          game.winner = livingPlayers[0].name;
+          game.resetGamePlayers();
+          eventManager.emitEndGame(io, gameCode);
+          eventManager.emitGameUpdate(io, gameCode, lobby, game);
           clearInterval(game.interval);
           return;
         }
-        else {
-
-        }
       }
-      game.turn = incrementTurn(game.gamePlayers, game.turn);
-      io.to(gameCode).emit('gameUpdate', {
-        lobbyPlayers: lobby.lobbyPlayers,
-        gamePlayers: game.gamePlayers,
-        turn: game.turn,
-        prompt: game.prompt,
-        timer: game.timer
-      });
+      game.incrementTurn();
+      eventManager.emitGameUpdate(io, gameCode, lobby, game);
+      const didBotPlay = botPlays(game.gamePlayers, game.turn, game.prompt);
+      if(didBotPlay) {
+        console.log(`Bot played ${didBotPlay}`);
+        game.setPlayerInput(didBotPlay);
+        game.incrementTurn();
+        game.getNewPrompt();
+        gameProps.resetGameTimer();
+        eventManager.emitGameUpdate(io, gameCode, lobby, game);
+      }
     }
   }, 1000);
 };
 
 const startStartTimer = (gameCode, io) => {
-  const gameProps = getGame(gameCode);
-  const game = gameProps.game;
-  const lobby = gameProps.lobby;
-  const settings = gameProps.settings;
+  const gameProps = gameManager.getGame(gameCode);
+  const game = gameProps.getGame();
+  const lobby = gameProps.getLobby();
   game.interval = setInterval(() => {
     game.startTimer--;
-    io.to(gameCode).emit('startTimerUpdate', { startTimer: game.startTimer });
+    eventManager.emitStartTimerUpdate(io, gameCode, game);
     if(game.startTimer === 0) {
-      game.prompt = getRandomPrompt();
+      game.getNewPrompt();
       clearInterval(game.interval);
-      io.to(gameCode).emit('startGame');
-      io.to(gameCode).emit('gameUpdate', {
-        lobbyPlayers: lobby.lobbyPlayers,
-        gamePlayers: game.gamePlayers,
-        turn: game.turn,
-        prompt: game.prompt,
-        timer: game.timer
-      });
+      eventManager.emitStartGame(io, gameCode);
+      eventManager.emitGameUpdate(io, gameCode, lobby, game);
       const didBotPlay = botPlays(game.gamePlayers, game.turn, game.prompt);
-      console.log(`Bot played ${didBotPlay}`);
       if(didBotPlay) {
-        game.gamePlayers[game.turn].inputVal = didBotPlay;
-        game.turn = incrementTurn(game.gamePlayers, game.turn);
-        game.prompt = getRandomPrompt();
-        game.timer = settings.timerDuration;
+        game.setPlayerInput(didBotPlay);
+        game.incrementTurn();
+        game.getNewPrompt();
+        gameProps.resetGameTimer();
         startTurnTimer(gameCode, io);
-        io.to(gameCode).emit('gameUpdate', {
-          lobbyPlayers: lobby.lobbyPlayers,
-          gamePlayers: game.gamePlayers,
-          turn: game.turn,
-          prompt: game.prompt,
-          timer: game.timer
-        });
+        eventManager.emitGameUpdate(io, gameCode, lobby, game);
       }
       else {
-        game.timer = settings.timerDuration;
+        game.resetGameTimer;
         startTurnTimer(gameCode, io);
-        io.to(gameCode).emit('gameUpdate', {
-          lobbyPlayers: lobby.lobbyPlayers,
-          gamePlayers: game.gamePlayers,
-          turn: game.turn,
-          prompt: game.prompt,
-          timer: game.timer
-        });
+        eventManager.emitGameUpdate(io, gameCode, lobby, game);
       }
       game.startTimer = 15;
       return;

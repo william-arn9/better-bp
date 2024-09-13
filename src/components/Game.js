@@ -101,8 +101,8 @@ const Game = () => {
       turnAudio.play().catch(error => {
         console.error('Error playing audio:', error);
       });
-    } 
-    setInputValue((''));
+      focusInput();
+    }
     // Update previous gamePlayers state
     prevTurnRef.current = turn;
     prevGamePlayersRef.current = gamePlayers;
