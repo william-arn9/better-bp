@@ -3,8 +3,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './components/Home';
 import Lobby from './components/Lobby';
-import Game from './components/Game'; // Assuming you have a Game component
+import Game from './components/Game';
 import Header from './components/widgets/Header';
+import './App.css';
 
 function App() {
   return (

@@ -37,7 +37,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="h-14 p-3 bg-secondary flex justify-between">
+    <nav className="h-14 p-3 mx-3 border-b border-b-gray-300 bg-gray-100 flex justify-between relative z-10">
       <h1 className="text-primary font-bold cursor-pointer" onClick={handleNavigate}>Welcome to BombParty</h1>
       <div className="flex h-8">
         <p className="text-primary mt-1 mr-4">Hi, <span className="font-bold">{username}</span>.</p>
