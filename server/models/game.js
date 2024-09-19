@@ -35,6 +35,7 @@ class Game {
   }
   resetGamePlayers() {
     this.gamePlayers = [];
+    this.size = 0;
   }
   getLivingPlayers() {
     return this.gamePlayers.filter((player) => player.alive);
